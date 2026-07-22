@@ -1,0 +1,247 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "31",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8300,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.2934939759036145,
+  "detail_coverage": 0.2934939759036145,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 1176,
+      "end": 1466,
+      "confidence": 0.98,
+      "vote_score": 0.98,
+      "mean_vote_confidence": 0.98,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Three rectangular pulses with identical timing, zero baseline, and vertical edges—but amplitude uniformly collapsed to ~0.09 (≈3% of normal 2.995), violating the strict amplitude control (MAD=0.0) documented in all reference profiles. Morphology is preserved but scaled, making it a distinct shapelet.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 2643,
+      "end": 2933,
+      "confidence": 0.98,
+      "vote_score": 0.98,
+      "mean_vote_confidence": 0.98,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Identical low-amplitude motif as candidate 0: three rectangular pulses at ~0.09 robust-standardized, zero baseline, correct period (~97), vertical transitions. Uniform scaling collapse relative to canonical amplitude_90=2.995 confirms shapelet anomaly.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 3297,
+      "end": 3393,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.46,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Single pulse with gradual rise (97→101), rounded low-amplitude peak (~0.08), no flat top, gradual fall (189→193)—violates learned normal motif of near-vertical edges and flat plateau at ~3.0. Verified on detail plot; matches reference template’s width/position expectations but distorted morphology.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5614,
+      "end": 5628,
+      "confidence": 1.0,
+      "vote_score": 1.96,
+      "mean_vote_confidence": 0.98,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0, 1]; representative local evidence: A single inverted rectangular pulse: rapid drop from 0 to ≈−22 at index 5614, flat bottom for 9 points (5615–5623), rapid return to 0 at 5623. Violates the normal pattern’s strict non-negativity (all references have min=0.0) and fixed positive amplitude; morphology is a mirror-image square wave—distinct shapelet.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0,
+        1
+      ],
+      "supporting_prediction_count": 2,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5614,
+          5623
+        ],
+        "numeric_interval": [
+          5614,
+          5628
+        ],
+        "threshold": 2.995427,
+        "spike_count": 2
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8299
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1176,
+      1466
+    ],
+    [
+      2643,
+      2933
+    ],
+    [
+      3200,
+      3490
+    ],
+    [
+      4110,
+      4400
+    ],
+    [
+      4844,
+      5134
+    ],
+    [
+      5470,
+      5868
+    ],
+    [
+      6885,
+      7466
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 17,
+    "unique_focus_regions": 9,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 1,
+    "novelty_redirects": 5,
+    "exploration_targets": 5,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.888889,
+    "resolved_event_intervals": [
+      [
+        1144,
+        1498
+      ],
+      [
+        2611,
+        2965
+      ],
+      [
+        3265,
+        3425
+      ],
+      [
+        5582,
+        5659
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/31/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "31__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/31/slices/0000_0_6399/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.22734375,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 9,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.8,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 4,
+        "exploration_targets": 4,
+        "resolved_event_intervals": [
+          [
+            1144,
+            1498
+          ],
+          [
+            2611,
+            2965
+          ],
+          [
+            5582,
+            5655
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8299,
+      "length": 5100,
+      "sample_id": "31__slice_0001_3200_8299",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/31/slices/0001_3200_8299/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.22823529411764706,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 1,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            65,
+            225
+          ],
+          [
+            2385,
+            2459
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 5,
+    "voted_prediction_count": 4,
+    "voted_anomaly_points": 694,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.96,
+    "covered_points": 8300,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

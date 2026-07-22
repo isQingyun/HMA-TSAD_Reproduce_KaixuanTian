@@ -1,0 +1,165 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "17",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 7628,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.7484268484530676,
+  "detail_coverage": 0.7484268484530676,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 4809,
+      "end": 4821,
+      "confidence": 1.0,
+      "vote_score": 1.99,
+      "mean_vote_confidence": 0.995,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0, 1]; representative local evidence: A single-sample-width positive impulse rising to ~1700 robust-standardized units—over 500× taller than the maximum normal amplitude (~3.0) and opposite in sign to the invariant negative spikes of the normal motif. Fully interior, symmetric, zero roughness surroundings, and absent in all reference profiles (which only contain negative excursions and smooth transitions).",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0,
+        1
+      ],
+      "supporting_prediction_count": 2,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          4809,
+          4810
+        ],
+        "numeric_interval": [
+          4809,
+          4821
+        ],
+        "threshold": 0.890328,
+        "spike_count": 4
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      7627
+    ]
+  ],
+  "observed_intervals": [
+    [
+      0,
+      995
+    ],
+    [
+      2108,
+      3112
+    ],
+    [
+      3268,
+      6975
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 15,
+    "unique_focus_regions": 9,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 2,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.666667,
+    "resolved_event_intervals": [
+      [
+        4732,
+        4842
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/17/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "17__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/17/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.65375,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.6,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            4732,
+            4827
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 7627,
+      "length": 4428,
+      "sample_id": "17__slice_0001_3200_7627",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/17/slices/0001_3200_7627/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.8220415537488708,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 7,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 1.75,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            1577,
+            1642
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 2,
+    "voted_prediction_count": 1,
+    "voted_anomaly_points": 13,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.99,
+    "covered_points": 7628,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

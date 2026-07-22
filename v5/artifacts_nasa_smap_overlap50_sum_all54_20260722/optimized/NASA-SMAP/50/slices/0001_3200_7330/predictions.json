@@ -1,0 +1,291 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "50__slice_0001_3200_7330",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 4131,
+  "normalization": {
+    "center": -0.356488391077937,
+    "scale": 0.03871948436480815
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      4
+    ],
+    [
+      934,
+      948
+    ],
+    [
+      1869,
+      1883
+    ],
+    [
+      2793,
+      2817
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    5,
+    15,
+    15,
+    25
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern consists of sharp, symmetric triangular pulses recurring at a stable period of approximately 5 points (consistent with the estimated period of 5 and window_cycles scaling). Each pulse rises rapidly from near-zero baseline to a peak (robust standardized value 20–42), then falls sharply back to baseline within ~2 points, followed by a flat or slightly rising quiescent interval (~3 points) before the next pulse. Baseline is near zero (median ≈ -0.4 to 0.07), with low noise during quiescence (MAD 0.14–0.25 in short windows, up to 0.48 in longer ones due to inclusion of pulse transitions). Peak amplitudes vary (20–42), but morphology—steep linear ascent/descent, apex symmetry, and consistent width—is highly repeatable. Curvature is high at peaks (23–25) and near-zero elsewhere; roughness is low in quiescent phases (<0.5) but spikes during transitions. No sustained trend is present across candidates; slope_per_point values are near zero except in candidate 3 where a spurious large slope (1.76) arises from endpoint truncation, not true drift. Acceptable variation includes moderate amplitude modulation and minor baseline offsets, but pulse shape, periodicity, and quiescent flatness are invariant.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          4
+        ],
+        "length": 5,
+        "median": -0.42804,
+        "mad": 0.135099,
+        "amplitude_90": 19.699857,
+        "roughness": 12.226245,
+        "curvature": 25.417762,
+        "slope_per_point": -0.03377474,
+        "lower_extreme": 0.854427,
+        "upper_extreme": 23.708908,
+        "window_cycles": 1.0,
+        "description": "Single triangular pulse over 5 points: flat baseline at ~0, sharp rise to peak ~22 at index 2, symmetric fall back to baseline by index 3, then flat. Very clean, no noise, minimal context.",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "single-cycle purity",
+          "perfect symmetry",
+          "zero noise"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          934,
+          948
+        ],
+        "length": 15,
+        "median": -0.422304,
+        "mad": 0.24894,
+        "amplitude_90": 29.729402,
+        "roughness": 0.316337,
+        "curvature": 0.469939,
+        "slope_per_point": 0.018418,
+        "lower_extreme": 0.541176,
+        "upper_extreme": 42.066433,
+        "window_cycles": 3.0,
+        "description": "Three full pulses over 15 points: identical triangular shapes (peak ~41, ~23, ~23), spaced evenly (~5 points apart), with flat baselines between. Slight baseline lift after second pulse; otherwise highly regular.",
+        "reliability": 0.95,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "3-cycle repetition",
+          "consistent peak spacing",
+          "minor baseline drift post-pulse 2"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1869,
+          1883
+        ],
+        "length": 15,
+        "median": 0.068012,
+        "mad": 0.476972,
+        "amplitude_90": 24.600608,
+        "roughness": 1.508142,
+        "curvature": 23.967496,
+        "slope_per_point": 0.00765892,
+        "lower_extreme": 1.414944,
+        "upper_extreme": 23.212856,
+        "window_cycles": 3.0,
+        "description": "Three pulses over 15 points, similar spacing and shape to candidate 1, but peaks slightly lower (~23, ~24, ~23) and baseline shows small positive offset (~0.07 median). One trough has slight rounding; otherwise robustly normal.",
+        "reliability": 0.94,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "lower amplitude peaks",
+          "positive baseline shift",
+          "mild trough smoothing"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2793,
+          2817
+        ],
+        "length": 25,
+        "median": -0.391892,
+        "mad": 0.208129,
+        "amplitude_90": 38.77452,
+        "roughness": 1.613852,
+        "curvature": 23.204999,
+        "slope_per_point": 1.75566742,
+        "lower_extreme": 0.8425,
+        "upper_extreme": 42.036021,
+        "window_cycles": 5.0,
+        "description": "Five pulses over 25 points; overall morphology matches others, but last pulse is truncated at right edge (ends mid-ascent), and a spurious steep upward slope appears at the end due to boundary artifact. Baseline fluctuates slightly more; MAD higher due to inclusion of transition zones.",
+        "reliability": 0.78,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "boundary truncation artifact",
+          "elevated roughness from edge effect",
+          "spurious terminal slope"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer candidate 0 for single-pulse query matching (e.g., isolated anomaly detection); use candidates 1 or 2 for multi-cycle queries—candidate 1 for higher-amplitude regimes, candidate 2 for slightly elevated baselines. Avoid candidate 3 for shape comparison due to truncation bias; only use its interior pulses (indices 2793–2812) if needed for extended-context validation.",
+    "uncertainties": [
+      "Exact amplitude tolerance range (20–42) may reflect normalization artifacts rather than true physical variability",
+      "Whether minor baseline offsets (e.g., +0.07 in candidate 2) indicate acceptable drift or early anomaly onset",
+      "Robustness of pulse symmetry under higher noise levels not observed in references"
+    ]
+  },
+  "analysis_window_points": 15,
+  "analysis_windows": {
+    "1": 5,
+    "3": 15,
+    "5": 25
+  },
+  "estimated_period": 5,
+  "coverage": 0.0,
+  "detail_coverage": 0.0,
+  "overview_coverage": 1.0,
+  "predictions": [],
+  "overview_intervals": [
+    [
+      0,
+      4130
+    ]
+  ],
+  "observed_intervals": [],
+  "attention_summary": {
+    "detail_visual_actions": 0,
+    "unique_focus_regions": 0,
+    "actions_per_focus": 0.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 5,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "An overview plot of [0, 4130] reveals a highly regular pulse train (period ~5, triangular, non-negative, baseline near zero) with one dominant deviation: a sharp, isolated negative spike at [2173, 2191] (min ~−12), violating the invariant that all normal activity stays ≥0. This anomaly is confidently identified (confidence 0.94), localized, and not attributable to edge effects or downsampling; surrounding pulses are intact. No other deviations or trends were observed. The task goal—characterizing dominant pattern and deviations—is fulfilled; no further non-redundant evidence actions remain.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "Attempted to inspect detail-scale window [2175, 2189] around strongest unresolved overview candidate (negative spike at [2173, 2191]) via Plot, but novelty guard rejected the request due to overlap with prior focus [2118, 2245]. No new evidence obtained; sub-task terminated as 'goal complete' without refinement or marking, leaving the candidate unresolved and morphology unverified.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect coverage gap [1080, 1094] via Plot, but novelty guard rejected the request due to overlap with prior focus ([1023, 1150]). Despite no new evidence obtained, the executor marked the sub-task as complete with 'goal complete', though the intended coverage gap remains unobserved and the anomaly candidate at [2173, 2191] is still unresolved. Uncertainty persists about whether the coverage goal was truly satisfied or prematurely closed.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [3153, 3167] via Plot, but the novelty guard rejected the request due to strong overlap with prior focus [3096, 3223]. No new evidence was obtained. The executor then marked the sub-goal as complete without further action, though the intended inspection of a novel detail window in the gap was not achieved; uncertainty remains about whether the gap is truly unobserved or merely overlapping with prior coverage.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [532, 546] via Plot, but the action was rejected by the novelty guard due to overlap with a prior focus region ([475, 602]). Despite the sub-goal specifying this interval as unobserved, the system deemed the plot overlapping and invalid. The executor then terminated with 'goal complete', though no novel evidence was gathered and the intended coverage gap remains unexamined. Uncertainty persists regarding whether [532, 546] is truly unobserved or whether the novelty guard’s overlap criterion is overly strict.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [1627, 1641] via Plot, but the novelty guard rejected it due to overlap with a broader interval [1570, 1697], suggesting this region may already be covered implicitly or the guard misclassified it as non-novel. No new evidence was obtained; the sub-task was prematurely marked complete despite unresolved uncertainty about coverage of [1627, 1641] and the pending strong candidate [2173, 2191].",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

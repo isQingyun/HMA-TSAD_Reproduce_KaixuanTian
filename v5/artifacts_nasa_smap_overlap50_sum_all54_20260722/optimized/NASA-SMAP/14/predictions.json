@@ -1,0 +1,195 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "14",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8595,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.5517161140197789,
+  "detail_coverage": 0.5517161140197789,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 3392,
+      "end": 3775,
+      "confidence": 1.0,
+      "vote_score": 1.0,
+      "mean_vote_confidence": 0.5,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Flat segment at robust z ≈ -2.20 over 384 points, contrasting sharply with learned normal pattern of strict zero (median=0, mad=0, roughness=0). No fluctuation, recovery, or transient—pure sustained level shift.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 4715,
+      "end": 6399,
+      "confidence": 0.95,
+      "vote_score": 0.95,
+      "mean_vote_confidence": 0.475,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [0]; representative local evidence: A sustained, perfectly flat elevation to y≈2.257 over 1685 points (6399−4715+1), directly contradicting the learned normal pattern of exact zero (median=0.0, MAD=0.0, roughness=0.0 across all references). The shift is abrupt at 4715 with no transition zone, and persists uniformly—matching the definition of a regime-level change in baseline.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 8492,
+      "end": 8594,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.92,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Sharp step-down from 0.0 to ~-2.0 at index 5292, followed by a flat anomalous regime lasting 103 points—violates zero-flat normal pattern with high magnitude and duration.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8594
+    ]
+  ],
+  "observed_intervals": [
+    [
+      0,
+      575
+    ],
+    [
+      2645,
+      4196
+    ],
+    [
+      4715,
+      6752
+    ],
+    [
+      8019,
+      8594
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 14,
+    "unique_focus_regions": 10,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 1,
+    "exploration_targets": 1,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.4,
+    "resolved_event_intervals": [
+      [
+        3360,
+        3807
+      ],
+      [
+        4683,
+        6399
+      ],
+      [
+        8460,
+        8594
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/14/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "14__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/14/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.44328125,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.2,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            4683,
+            6399
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8594,
+      "length": 5395,
+      "sample_id": "14__slice_0001_3200_8594",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/14/slices/0001_3200_8594/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.505097312326228,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.6,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            160,
+            607
+          ],
+          [
+            5260,
+            5394
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 3,
+    "voted_prediction_count": 3,
+    "voted_anomaly_points": 2172,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.0,
+    "covered_points": 8595,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

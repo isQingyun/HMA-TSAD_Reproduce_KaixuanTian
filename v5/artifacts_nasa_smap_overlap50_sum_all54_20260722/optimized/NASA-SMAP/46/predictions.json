@@ -1,0 +1,221 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "46",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8493,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.273872600965501,
+  "detail_coverage": 0.273872600965501,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 224,
+      "end": 380,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.94,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Single-cycle waveform with structurally altered morphology: peak amplitude ~2.2 (vs 4.5–5.5), peak width ~15 pts (vs 40–60), ascent ~40 pts (vs 20–30), descent lacks shallow rebounds and deep trough, ending in flat jitter near zero—none match reference motifs (ref0, ref1, ref2).",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5870,
+      "end": 6020,
+      "confidence": 0.86,
+      "vote_score": 0.86,
+      "mean_vote_confidence": 0.428444,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: A narrow positive micro-peak (~+2.5 z) appears during the descent phase (relative phase ~0.35) where the normal pattern expects a flat plateau or gentle step. This violates the learned stepwise descent motif and is absent in all high-reliability references (e.g., ref 1: [795,1265]). The event is tightly bounded by rise (2718), peak (2723), and return (2728).",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 2,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5918,
+          5928
+        ],
+        "numeric_interval": [
+          5870,
+          5973
+        ],
+        "threshold": 4.337245,
+        "spike_count": 49
+      }
+    },
+    {
+      "start": 6049,
+      "end": 6390,
+      "confidence": 0.96,
+      "vote_score": 0.96,
+      "mean_vote_confidence": 0.48,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Full-cycle motif preserved but amplitude uniformly inflated: peaks ~15–22 vs normal 4.5–5.5, troughs ~−18 to −20 vs normal ≥−3.0; exceeds 3σ of reference MAD (0.67); timing aligns with 157-pt period, ruling out phase shift; edges show complete cycle phases.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5908,
+          6148
+        ],
+        "numeric_interval": [
+          6049,
+          6390
+        ],
+        "threshold": 4.337245,
+        "spike_count": 125
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8492
+    ]
+  ],
+  "observed_intervals": [
+    [
+      0,
+      470
+    ],
+    [
+      2595,
+      3260
+    ],
+    [
+      4238,
+      4708
+    ],
+    [
+      5661,
+      6378
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 13,
+    "unique_focus_regions": 6,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 2,
+    "exploration_targets": 2,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.166667,
+    "resolved_event_intervals": [
+      [
+        192,
+        412
+      ],
+      [
+        5876,
+        6180
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/46/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "46__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/46/slices/0000_0_6399/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.28984375,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 9,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.25,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            192,
+            412
+          ],
+          [
+            5876,
+            6180
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8492,
+      "length": 5293,
+      "sample_id": "46__slice_0001_3200_8492",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/46/slices/0001_3200_8492/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.20423200453429058,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 4,
+        "unique_focus_regions": 2,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            2686,
+            2760
+          ],
+          [
+            2775,
+            2851
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 4,
+    "voted_prediction_count": 3,
+    "voted_anomaly_points": 650,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.96,
+    "covered_points": 8493,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

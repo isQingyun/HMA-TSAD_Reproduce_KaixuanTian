@@ -1,0 +1,305 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "7",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8375,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.13074626865671643,
+  "detail_coverage": 0.13074626865671643,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 5457,
+      "end": 5467,
+      "confidence": 1.0,
+      "vote_score": 1.86,
+      "mean_vote_confidence": 0.93,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0, 1]; representative local evidence: Cluster of 8–10 rectangular spikes (width ≤1 pt) dropping ~0.3 z-units within 11 points—amplitude and density vastly exceed normal step behavior (max step Δ≈0.1, ≤3 micro-wiggles total in references 2/3). Morphology is impulsive, coherent, and not attributable to sensor quantization (references show MAD <0.26, no high-freq noise).",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0,
+        1
+      ],
+      "supporting_prediction_count": 2,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5457,
+          5467
+        ],
+        "numeric_interval": [
+          5457,
+          5467
+        ],
+        "threshold": 0.037543,
+        "spike_count": 8
+      }
+    },
+    {
+      "start": 5612,
+      "end": 5618,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.47,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Symmetric V-shaped dip (min ≈−2.33) spanning 7 points (5614–5620), lacking preceding/following plateaus. Normal steps are monotonic with ≥10-pt onset/offset and flat segments; this is an impulsive impulse inconsistent with learned stepwise decay.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5614,
+          5620
+        ],
+        "numeric_interval": [
+          5612,
+          5618
+        ],
+        "threshold": 0.037543,
+        "spike_count": 4
+      }
+    },
+    {
+      "start": 5715,
+      "end": 5726,
+      "confidence": 0.89,
+      "vote_score": 0.89,
+      "mean_vote_confidence": 0.445,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Dense ‘buzz’ of 5–6 up/down oscillations (peak-to-peak ~0.2 z-units) between 5712–5725. Normal references permit at most 2–3 isolated micro-wiggles near low levels; this clustered, higher-amplitude morphology deviates from the expected rectangular step motif.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5712,
+          5725
+        ],
+        "numeric_interval": [
+          5715,
+          5726
+        ],
+        "threshold": 0.037543,
+        "spike_count": 6
+      }
+    },
+    {
+      "start": 6827,
+      "end": 6844,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.94,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Burst of ~8 tightly packed vertical spikes (peak ~−0.35) within a flat plateau; coherent, repeatable structure with zero roughness outside the burst; normal references show zero roughness and curvature in plateaus, never such high-frequency discrete spikes.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          6827,
+          6844
+        ],
+        "numeric_interval": [
+          6827,
+          6844
+        ],
+        "threshold": 0.037543,
+        "spike_count": 10
+      }
+    },
+    {
+      "start": 8181,
+      "end": 8220,
+      "confidence": 0.96,
+      "vote_score": 0.96,
+      "mean_vote_confidence": 0.96,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Upward piecewise-constant staircase with ~12 abrupt steps over 256 points; step magnitudes (0.3–0.5) exceed normal variation (≤0.3), direction contradicts universal downward/stationary normal motif; no reference exhibits upward steps or comparable cadence—clear morphological deviation.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          8109,
+          8364
+        ],
+        "numeric_interval": [
+          8181,
+          8220
+        ],
+        "threshold": 0.037543,
+        "spike_count": 7
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8374
+    ]
+  ],
+  "observed_intervals": [
+    [
+      5334,
+      5744
+    ],
+    [
+      6696,
+      6952
+    ],
+    [
+      7948,
+      8374
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 9,
+    "unique_focus_regions": 4,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 4,
+    "novelty_redirects": 2,
+    "exploration_targets": 2,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.25,
+    "resolved_event_intervals": [
+      [
+        5416,
+        5499
+      ],
+      [
+        5582,
+        5652
+      ],
+      [
+        5680,
+        5757
+      ],
+      [
+        6795,
+        6876
+      ],
+      [
+        8077,
+        8374
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/7/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "7__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/7/slices/0000_0_6399/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.06421875,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 3,
+        "unique_focus_regions": 1,
+        "actions_per_focus": 3.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            5425,
+            5499
+          ],
+          [
+            5582,
+            5652
+          ],
+          [
+            5680,
+            5757
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8374,
+      "length": 5175,
+      "sample_id": "7__slice_0001_3200_8374",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/7/slices/0001_3200_8374/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.18183574879227052,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 4,
+        "novelty_redirects": 2,
+        "exploration_targets": 2,
+        "resolved_event_intervals": [
+          [
+            2216,
+            2286
+          ],
+          [
+            3595,
+            3676
+          ],
+          [
+            4877,
+            5174
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 6,
+    "voted_prediction_count": 5,
+    "voted_anomaly_points": 88,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.8599999999999999,
+    "covered_points": 8375,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

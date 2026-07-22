@@ -1,0 +1,293 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "6__slice_0000_0_6399",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 6400,
+  "normalization": {
+    "center": -0.1729943611376971,
+    "scale": 0.4855666033971346
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      15
+    ],
+    [
+      944,
+      991
+    ],
+    [
+      1887,
+      1934
+    ],
+    [
+      2799,
+      2878
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    16,
+    48,
+    48,
+    80
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The channel exhibits a robust quasi-periodic oscillation with an estimated fundamental period of ~16 points, consistent across all candidates. Each cycle contains a sharp, asymmetric V-shaped trough followed by a slower, convex rise to a broad plateau or gentle peak; the trough is typically 1.0–1.5 standardized units deep and spans ~4–5 points, while the rising limb occupies ~8–10 points and often shows slight curvature (positive second derivative). Amplitude (90th percentile range) varies modestly between 2.07 and 3.17, but shape morphology is highly conserved: troughs are consistently narrow and steep on the left side, smoother on the right; peaks/plateaus are flat-topped or gently rounded, rarely sharp. Baseline level (median) drifts slightly across segments (−0.27 to +0.34), but local stability within each window is high—roughness (~0.202) and curvature (~0.07–0.13) are tightly clustered, indicating low noise and minimal trend within windows. Slope per point is near-zero overall (±0.05), confirming stationarity at the analysis-window scale. Boundary truncation is present in candidate 0 (only 1 cycle), but its morphology matches the first half of longer cycles. No abrupt discontinuities or irregular spikes appear in any candidate; noise appears as small linear interpolation artifacts rather than stochastic jitter. Acceptable variation includes minor shifts in trough depth, plateau width, and exact peak height—but the core V-rise-plateau motif remains invariant.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          15
+        ],
+        "length": 16,
+        "median": 0.337339,
+        "mad": 0.607404,
+        "amplitude_90": 2.209172,
+        "roughness": 0.202227,
+        "curvature": 0.067478,
+        "slope_per_point": 0.05396742,
+        "lower_extreme": 1.753438,
+        "upper_extreme": 0.607404,
+        "window_cycles": 1.0,
+        "description": "Single-cycle excerpt (16 pts) showing a complete V-trough (pts 0–5), steep recovery (pts 5–8), and flat plateau (pts 9–15); baseline starts near −0.5, ends near +0.3; no visible contamination; morphology matches the first cycle of longer candidates.",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "single clean cycle",
+          "sharp symmetric trough",
+          "flat top plateau",
+          "no outliers"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          944,
+          991
+        ],
+        "length": 48,
+        "median": -0.26983,
+        "mad": 0.674508,
+        "amplitude_90": 2.067236,
+        "roughness": 0.202368,
+        "curvature": 0.134968,
+        "slope_per_point": 0.02439875,
+        "lower_extreme": 1.281074,
+        "upper_extreme": 0.944587,
+        "window_cycles": 3.0,
+        "description": "Three-cycle segment (48 pts) with three well-formed V-troughs and plateaus; troughs at ~947, 960, 973; slight baseline drift upward; one minor flat segment near 950–951 but not anomalous; morphology highly consistent with candidate 2 and 3.",
+        "reliability": 0.97,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "three identical trough shapes",
+          "moderate baseline drift",
+          "smooth convex rises"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1887,
+          1934
+        ],
+        "length": 48,
+        "median": 0.202401,
+        "mad": 0.742179,
+        "amplitude_90": 3.167983,
+        "roughness": 0.202618,
+        "curvature": 0.134834,
+        "slope_per_point": -0.02439574,
+        "lower_extreme": 1.551095,
+        "upper_extreme": 1.822714,
+        "window_cycles": 3.0,
+        "description": "Three-cycle segment (48 pts) mirroring candidate 1’s structure but with higher amplitude (peak ~2.0) and slightly deeper troughs; baseline starts higher (+0.2); third cycle shows a broader plateau; curvature and roughness nearly identical to candidate 1—strong consensus support.",
+        "reliability": 0.96,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "higher amplitude",
+          "broader plateau in cycle 3",
+          "identical trough timing"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2799,
+          2878
+        ],
+        "length": 80,
+        "median": -0.134919,
+        "mad": 0.674563,
+        "amplitude_90": 2.168558,
+        "roughness": 0.202393,
+        "curvature": 0.067503,
+        "slope_per_point": -0.00256278,
+        "lower_extreme": 1.348584,
+        "upper_extreme": 1.147165,
+        "window_cycles": 5.0,
+        "description": "Five-cycle segment (80 pts) confirming the recurring motif across extended context; all five troughs align in shape and spacing; minor slope drift (−0.0025/pt) visible but negligible; one cycle (around 2840) has a slightly sharper peak, yet still within amplitude_90 bounds; no breaks or outliers.",
+        "reliability": 0.99,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "five clean cycles",
+          "longest context",
+          "most stable roughness",
+          "minimal trend"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer candidate 3 (5P) for queries with ≥3 cycles due to maximal context and lowest slope drift; use candidate 0 (1P) only for single-cycle query matching when full-cycle alignment is critical; candidates 1 and 2 are interchangeable for 3-cycle queries—choose candidate 1 if baseline is near zero, candidate 2 if higher baseline is expected. When query morphology shows a sharper peak or deeper trough than candidate 3, compare against candidate 2’s higher-amplitude variant before flagging anomaly.",
+    "uncertainties": [
+      "Exact phase alignment of troughs across global time is unknown—only relative cycle shape is reliable",
+      "Whether the flat-top plateau is truly constant or subtly modulated over >5 cycles remains unverifiable from these excerpts",
+      "Robust standardization uses median/MAD; extreme outliers could distort local scaling, though none appear here"
+    ]
+  },
+  "analysis_window_points": 48,
+  "analysis_windows": {
+    "1": 16,
+    "3": 48,
+    "5": 80
+  },
+  "estimated_period": 16,
+  "coverage": 0.0,
+  "detail_coverage": 0.0,
+  "overview_coverage": 1.0,
+  "predictions": [],
+  "overview_intervals": [
+    [
+      0,
+      6399
+    ]
+  ],
+  "observed_intervals": [],
+  "attention_summary": {
+    "detail_visual_actions": 0,
+    "unique_focus_regions": 0,
+    "actions_per_focus": 0.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 5,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "A coarse overview of [0, 6399] confirms a dominant quasi-periodic V-trough motif (~16-pt period, depth ~1.0–1.5 std, amplitude stable at 2.0–3.2 std), with slight baseline drift but local stationarity. Two anomaly intervals were identified: (1) [5800, 6379], a sustained trend anomaly (confidence 0.78) marked by progressive baseline drop (median −0.4), loss of plateau flatness, and morphological degradation over >30 cycles—distinct from acceptable slow drift per reference memory; (2) [6380, 6399], a high-confidence point anomaly (0.92) featuring a sharp, narrow downward impulse to −1.2, violating the invariant trough morphology and not attributable to downsampling or truncation. No further non-redundant evidence actions remain; goal of characterizing dominant pattern and deviations is complete.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "Attempted to plot detail-scale window [6352, 6399] around strongest unresolved candidate [6380, 6399] (confidence 0.92) for morphological verification against V-trough motif; Plot was rejected by novelty guard due to overlap with prior focus [6272, 6399]. No further evidence was gathered, and the sub-task was prematurely marked complete without resolving the candidate or confirming anomaly status—leaving uncertainty about whether the impulse is a true anomaly or artifact.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to Plot detail window [3152, 3199] (48 pts, matching 3-cycle analysis window) as the largest unobserved gap per coverage guard; rejected by novelty guard due to overlap with prior focus interval [3111, 3238]. No detail evidence obtained. Executor concluded goal complete despite lack of new evidence, possibly due to implicit assumption that coverage guard satisfaction suffices without novel plot.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "The coverage guard selected [1552, 1599] as the largest unobserved gap for novel detail inspection. A Plot attempt on this interval was rejected by the novelty guard due to overlap with a prior focus ([1511, 1638]), indicating the region is not truly unobserved or violates the non-overlap constraint. No valid evidence was gathered, yet the executor concluded the goal as complete without further action—leaving unresolved whether the gap is genuinely novel or if the rejection reflects a misalignment in coverage planning.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "The coverage guard targeted the largest unobserved gap [4752, 4799] for detail-scale inspection. A Plot attempt failed due to novelty guard rejection (interval [4711, 4838] deemed overlapping/repeated). Despite no new evidence obtained, the Executor marked the goal as complete—likely assuming the gap is covered by prior context or that further action is unnecessary per current policy. No anomaly was marked or rejected; uncertainty remains about whether [4752, 4799] is truly observed or if coverage is incomplete.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "The coverage guard selected [752, 799] as the largest unobserved gap for inspection. A Plot attempt on this interval was rejected by the novelty guard due to overlap with [711, 838], indicating prior focus in that broader region despite no explicit prior observed_intervals. The executor concluded the goal as complete without gathering new evidence, leaving uncertainty about whether [752, 799] is truly unobserved or merely overlapped with earlier attention; no anomaly intervals were marked or rejected based on evidence.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

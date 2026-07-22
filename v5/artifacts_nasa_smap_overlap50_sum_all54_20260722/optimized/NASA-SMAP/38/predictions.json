@@ -1,0 +1,164 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "38",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8469,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.2853937891132365,
+  "detail_coverage": 0.2853937891132365,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 4785,
+      "end": 4866,
+      "confidence": 1.0,
+      "vote_score": 1.94,
+      "mean_vote_confidence": 0.915122,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0, 1]; representative local evidence: A 73-point flat plateau at z≈0.60 replaces the expected asymmetric sawtooth motif (sharp trough + smooth recovery). All reference windows show non-zero curvature and consistent troughs; this segment has zero curvature, no trough, and abrupt transitions—fundamentally violating the learned normal morphology.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0,
+        1
+      ],
+      "supporting_prediction_count": 2
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8468
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1110,
+      1394
+    ],
+    [
+      2505,
+      2979
+    ],
+    [
+      3801,
+      4085
+    ],
+    [
+      4653,
+      5109
+    ],
+    [
+      5559,
+      6115
+    ],
+    [
+      6647,
+      7004
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 16,
+    "unique_focus_regions": 8,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 2,
+    "novelty_redirects": 5,
+    "exploration_targets": 5,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.0,
+    "resolved_event_intervals": [
+      [
+        4753,
+        4898
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/38/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "38__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/38/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.218125,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 7,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 1.75,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 1,
+        "novelty_redirects": 2,
+        "exploration_targets": 2,
+        "resolved_event_intervals": [
+          [
+            4753,
+            4898
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8468,
+      "length": 5269,
+      "sample_id": "38__slice_0001_3200_8468",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/38/slices/0001_3200_8468/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.29227557411273486,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 9,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.25,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 1,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            1562,
+            1698
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 2,
+    "voted_prediction_count": 1,
+    "voted_anomaly_points": 82,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.94,
+    "covered_points": 8469,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

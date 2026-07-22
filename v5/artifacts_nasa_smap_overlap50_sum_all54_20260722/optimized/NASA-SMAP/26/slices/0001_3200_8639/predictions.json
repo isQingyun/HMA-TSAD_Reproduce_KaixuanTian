@@ -1,0 +1,387 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "26__slice_0001_3200_8639",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 5440,
+  "normalization": {
+    "center": -0.8544682785783251,
+    "scale": 0.11733439254645674
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      97
+    ],
+    [
+      862,
+      1155
+    ],
+    [
+      1724,
+      2017
+    ],
+    [
+      2390,
+      2879
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    98,
+    294,
+    294,
+    490
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern consists of a quasi-periodic pulse train with a fundamental period of ~98 points, as confirmed by the reference_cycle_plan and estimated_period. Each cycle features a sharp, near-vertical rise (duration ~2–4 points) to a peak between 15–19 robust-standardized units, followed by a rapid drop (~3–6 points) to near-zero baseline, then a low-amplitude noisy plateau lasting ~80–90 points before the next pulse. Baseline is stable near zero (median ≈ 0), with minor drift (<0.01 per point) across longer windows. Peak morphology is consistent: slightly asymmetric with steeper ascent than descent, rounded tops (not尖锐 spikes), and minimal pre-peak oscillation. Troughs are flat and shallow (≈0–1), occasionally dipping slightly negative but rarely below −1. Noise during baseline is low-magnitude (MAD ≈ 0.66–0.67), irregular, and non-Gaussian—appearing as small jagged fluctuations without clear structure. Amplitude_90 is tightly clustered (17.4–19.1), indicating high amplitude consistency. Roughness (~0.166) and curvature (~0.168–0.171) are nearly identical across candidates, confirming morphological stability. Minor variations exist in exact peak height and baseline offset (e.g., ref 0 has median 0.65, others near 0), but these are attributable to local trend or normalization artifacts rather than true anomaly. No sustained trends or regime shifts are present; all candidates exhibit the same pulse cadence and shape when aligned by cycle count.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          97
+        ],
+        "length": 98,
+        "median": 0.646246,
+        "mad": 1.320737,
+        "amplitude_90": 18.626577,
+        "roughness": 0.16594,
+        "curvature": 0.168616,
+        "slope_per_point": -0.00887386,
+        "lower_extreme": 1.668857,
+        "upper_extreme": 17.868642,
+        "window_cycles": 1.0,
+        "description": "Single-cycle (1P) excerpt showing one full pulse: sharp rise from ~17.5 to ~1.7 at index 7, then slow recovery to ~1.5 by index 20, followed by low-noise baseline until index 97. Contains only one major pulse; baseline appears elevated (median 0.65) and ends with a rising edge suggesting incomplete cycle truncation at right boundary.",
+        "reliability": 0.82,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "elevated baseline median",
+          "single pulse only",
+          "right-boundary upward truncation",
+          "slightly higher roughness due to limited cycles"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          862,
+          1155
+        ],
+        "length": 294,
+        "median": 0.0,
+        "mad": 0.674491,
+        "amplitude_90": 19.130617,
+        "roughness": 0.165502,
+        "curvature": 0.169498,
+        "slope_per_point": 0.00465397,
+        "lower_extreme": 1.199439,
+        "upper_extreme": 19.688149,
+        "window_cycles": 3.0,
+        "description": "Three-cycle (3P) excerpt with three clean, well-separated pulses at indices ~890, 985, 1080. Peaks reach ~19.7, ~15.5, ~19.2; baselines near zero with low noise. Pulse shapes highly consistent; minor asymmetry in second pulse (slightly sharper fall). No trend; slope_per_point near zero.",
+        "reliability": 0.97,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "three full pulses",
+          "lowest MAD (0.674)",
+          "most symmetric morphology",
+          "stable baseline"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1724,
+          2017
+        ],
+        "length": 294,
+        "median": 0.0,
+        "mad": 0.660369,
+        "amplitude_90": 18.841013,
+        "roughness": 0.16594,
+        "curvature": 0.17132,
+        "slope_per_point": -0.00058471,
+        "lower_extreme": 1.378132,
+        "upper_extreme": 19.060885,
+        "window_cycles": 3.0,
+        "description": "Three-cycle (3P) excerpt, visually nearly identical to ref 1: pulses at ~1730, 1825, 1920; peaks ~19.1, ~15.3, ~19.0. Slightly lower amplitude_90 (18.84 vs 19.13) and marginally higher curvature (0.171 vs 0.169), but otherwise indistinguishable in shape, timing, and noise profile.",
+        "reliability": 0.96,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "near-perfect replica of ref 1",
+          "very low baseline drift",
+          "consistent pulse spacing"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2390,
+          2879
+        ],
+        "length": 490,
+        "median": 0.164174,
+        "mad": 0.667345,
+        "amplitude_90": 17.374473,
+        "roughness": 0.16594,
+        "curvature": 0.167691,
+        "slope_per_point": 0.00620044,
+        "lower_extreme": 1.542306,
+        "upper_extreme": 19.162598,
+        "window_cycles": 5.0,
+        "description": "Five-cycle (5P) excerpt spanning 490 points; shows five pulses with slight amplitude decay in later cycles (peak ~19.2 → ~17.0). Baseline median 0.164, mild positive slope (0.0062/point), and one minor secondary ripple after pulse 4. Overall morphology preserved; noise level unchanged. Longer window reveals subtle long-term drift not visible in shorter excerpts.",
+        "reliability": 0.91,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "five pulses",
+          "mild amplitude decay",
+          "detectable low-slope trend",
+          "slightly reduced amplitude_90"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer reference 1 or 2 for query segments with 2–4 cycles due to highest morphological fidelity and lowest noise. Use reference 3 when analyzing longer windows (>400 pts) where slow drift or amplitude modulation may be relevant. Reference 0 is suitable only for single-pulse validation or boundary-effect analysis; avoid for multi-cycle comparison due to truncation and elevated baseline. When query shows asymmetric pulses or baseline offsets, compare against ref 1/2 first—ref 3’s drift may mislead if not accounted for.",
+    "uncertainties": [
+      "Exact pulse onset timing tolerance (±1–2 pts) not quantified",
+      "Whether minor amplitude decay in ref 3 is systematic or stochastic",
+      "Potential for very short-duration anomalies (<3 pts) to be masked by pulse rise/fall slopes",
+      "Robust-standardized scale obscures absolute magnitude context; true physical meaning of '18' units unknown"
+    ]
+  },
+  "analysis_window_points": 294,
+  "analysis_windows": {
+    "1": 98,
+    "3": 294,
+    "5": 490
+  },
+  "estimated_period": 98,
+  "coverage": 0.17959558823529412,
+  "detail_coverage": 0.17959558823529412,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 2433,
+      "end": 2726,
+      "confidence": 0.88,
+      "anomaly_type": "shapelet",
+      "evidence": "Consensus from 2 distinct detail proposals ([2433,2726], [2440,2455], [2538,2552], [2584,2598]); weighted boundary [2433,2726], majority type shapelet. Representative evidence: First pulse (centered ~2445) has peak ~10.5 (vs normal 15–19), rise duration ~8 points (vs normal 2–4), and a rounded, sluggish ascent instead of near-vertical; trough stays at ~1.5 (vs normal ~0), indicating incomplete reset. Morphology deviates structurally—not just scaled down—from the normal motif. | Counterevidence checked: Could be a phase-shifted normal pulse if baseline were elevated, but reference 2 shows baseline near 0 and no such elevation; test baseline is also near 0 outside pulses, ruling out global offset. | Boundary rationale: Pulse begins rising at ~2440 (from baseline ~0), peaks at ~2445, and returns to baseline by ~2455—coordinates estimated from x-tick interpolation between 2432 and 2468 (each major tick = 16 points); visible inflection points confirm this span.",
+      "source": "detail-consensus:2"
+    },
+    {
+      "start": 4731,
+      "end": 4748,
+      "confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Consensus from 2 distinct detail proposals ([4731,4740], [4732,4748]); weighted boundary [4731,4748], majority type shapelet. Representative evidence: Pulse centered at ~4734 shows two distinct pre-peak oscillations (local maxima at ~4732 and ~4734, values ~3.5 and ~4.2) before the main rise, and a secondary bump (~5.8) during descent—none present in any reference cycle, which have smooth, monotonic rise/fall without substructure. | Counterevidence checked: Could be attributed to high-frequency noise叠加 on a normal pulse; however, the oscillations are coherent, reproducible across ~9 pts, and exceed typical baseline jaggedness (MAD ~0.67), making pure noise unlikely. | Boundary rationale: Start at 4731 captures the onset of the first pre-peak ripple; end at 4740 includes the secondary post-peak bump before baseline re-stabilizes near zero at 4741. This interval fully encloses the anomalous morphological deviation.",
+      "source": "detail-consensus:2"
+    },
+    {
+      "start": 5146,
+      "end": 5439,
+      "confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Consensus from 2 distinct detail proposals ([5146,5439], [5298,5304]); weighted boundary [5146,5439], majority type shapelet. Representative evidence: All five pulses exhibit uniformly reduced peak amplitude (12–14 vs expected 17–19) while preserving exact morphology, timing, and baseline—indicating a global scaling/shaping deviation rather than point outliers or frequency shift. | Counterevidence checked: Could be misinterpreted as normal amplitude variation if reference amplitude spread were wider; however, reference amplitude_90 is tightly clustered (17.4–19.1) with MAD < 0.8, and no reference cycle falls below 17.0. Also, no local trend or drift explains uniform attenuation across all pulses. | Boundary rationale: The anomaly spans the entire visible interval because every pulse in [5146,5439] shares the same attenuated morphology; excluding any pulse would omit part of the coherent anomalous regime. The left edge (5146) captures the onset of the first attenuated pulse; the right edge (5439) is the plot limit, and the rising tail at 5435–5439 belongs to the fifth pulse’s recovery—not a new event.",
+      "source": "detail-consensus:2"
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      5439
+    ]
+  ],
+  "observed_intervals": [
+    [
+      2432,
+      2726
+    ],
+    [
+      4626,
+      5012
+    ],
+    [
+      5145,
+      5439
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 6,
+    "unique_focus_regions": 3,
+    "actions_per_focus": 2.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 0,
+    "exploration_targets": 0,
+    "resolved_event_intervals": [
+      [
+        2401,
+        2758
+      ],
+      [
+        4699,
+        4780
+      ],
+      [
+        5114,
+        5439
+      ]
+    ],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "A coarse overview of [0, 5439] revealed a dominant quasi-periodic pulse train (period ~98, peaks ~14–16, baseline ~0, MAD ~0.6–0.7), consistent with reference morphology but with three notable deviations: (1) a sustained low-amplitude regime [4580, 5152] (573 pts) with pulse heights ≤8 (vs normal 15–19), irregular spacing, and degraded shape—rejected as slow decay due to severity (>5 cycles below 10 vs ref 3’s mild decay to >17); (2) a narrow-shapelet cluster [2576, 2585] (10 pts) of steep, symmetric, ≤2-pt-wide pulses, distinct from adjacent normal pulses and not explainable by downsampling; (3) an isolated deep trough [5400, 5420] (21 pts) reaching −1.3 (vs ref max −0.8), >2 MAD below median, ruling out noise or trend. The right edge (≥5400) shows truncation artifacts, but the trough is confirmed pre-truncation. No further non-redundant evidence actions remain; goal of characterizing dominant pattern and deviations is fulfilled, though confidence varies (0.87, 0.78, 0.72).",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The unresolved overview candidate [4580, 5152] was refined via detail Plot of [4719, 5012], revealing a strong shapelet at [4731, 4740] (pre-peak oscillations + post-peak bump, confidence 0.87), but this was superseded by a more robust anomaly identified in Compare: three contiguous distorted pulses in the 3P window [4626, 4919], with the strongest being the first pulse at [4630, 4648] (slow rise, flattened peak, plateaued descent; confidence 0.92). Compare selected reference 1 at 3-cycle scale as optimal, confirming morphology deviations exceed normal variability and are not attributable to phase/trend/noise. The Mark action registered [4630, 4648] as a shapelet anomaly. Remaining uncertainty: the second ([4732, 4748]) and third ([4830, 4848]) pulses show co-occurring distortions—potentially part of a sustained morphological degradation—but only the first was marked due to highest confidence; whether they constitute separate anomalies or a single extended event remains unresolved.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.07114,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 4630,
+          "end": 4648,
+          "confidence": 0.92,
+          "anomaly_type": "shapelet",
+          "evidence": "First pulse (centered ~4635) has abnormally slow rise (≈8 points vs normal 2–4), peak amplitude ~12.5 (vs normal 19±1), and a broad, flattened top with no sharp apex; descent includes a plateau at z≈3–4 before reaching baseline—deviating from the canonical steep drop to near-zero. | Counterevidence checked: Possible minor phase misalignment or local baseline offset could stretch the rise, but the combined reduction in peak height, loss of sharpness, and prolonged shoulder exceed normal variability observed across all references. | Boundary rationale: Start at 4630 captures the onset of the abnormal rise (where curve departs from baseline faster than noise but slower than normal pulse); end at 4648 covers the full distorted pulse including the shoulder before baseline re-stabilization (~4647–4648). Verified on 3P detail plot: indices 4630–4648 encompass the entire anomalous motif without including adjacent normal baseline.",
+          "source": "executor:detail:compare:3P:ref1:compare_002_3P_ref1_4626_4919.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The strongest unresolved overview candidate [2433, 2726] was inspected at detail resolution and compared against reference 2 at 3P scale. Evidence confirms sustained amplitude suppression across five pulses (peaks 10–15 vs normal 17–19), with the first two pulses ([2440, 2455] and [2538, 2552]) exhibiting structural shapelet deviations: slow rise (~8 pts vs 2–4), flattened peaks (~10.5), and incomplete reset (trough ~1.5 vs ~0). The first pulse [2440, 2455] has the highest confidence (0.88) and decisive morphological distortion, independent of global scaling or baseline shift. This interval was Marked as a shapelet anomaly; the broader trend-level anomaly over [2433, 2726] remains unmarked due to confidence <0.90 and lack of deterministic numeric confirmation beyond Compare’s scale deviation score (3.71). Uncertainty persists on whether the regime shift is transient or part of a longer anomalous segment.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.125368,
+      "mark_count_after": 2,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 2440,
+          "end": 2455,
+          "confidence": 0.88,
+          "anomaly_type": "shapelet",
+          "evidence": "First pulse (centered ~2445) has peak ~10.5 (vs normal 15–19), rise duration ~8 points (vs normal 2–4), and a rounded, sluggish ascent instead of near-vertical; trough stays at ~1.5 (vs normal ~0), indicating incomplete reset. Morphology deviates structurally—not just scaled down—from the normal motif. | Counterevidence checked: Could be a phase-shifted normal pulse if baseline were elevated, but reference 2 shows baseline near 0 and no such elevation; test baseline is also near 0 outside pulses, ruling out global offset. | Boundary rationale: Pulse begins rising at ~2440 (from baseline ~0), peaks at ~2445, and returns to baseline by ~2455—coordinates estimated from x-tick interpolation between 2432 and 2468 (each major tick = 16 points); visible inflection points confirm this span.",
+          "source": "executor:detail:compare:3P:ref2:compare_004_3P_ref2_2432_2725.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The unresolved overview candidate [5146, 5439] was inspected via detail Plot and 3P Compare against high-reliability reference 1. The Plot revealed five pulses with uniformly attenuated peaks (12–14 vs expected 17–19), suggesting a global amplitude deviation (confidence 0.87), but this alone was insufficient for Mark. The Compare uncovered a distinct localized shapelet at [5298, 5304]: a sharp secondary spike (~6.5) during the falling edge of the second pulse, absent in all normal references and inconsistent with noise or phase shift; boundaries were verified visually and via x-axis ticks. This anomaly—morphologically deviant, structured, and contextually isolated—was then Marked with confidence 0.87. No other anomalies in [5146, 5439] met Mark criteria; the broader amplitude attenuation remains unmarked due to sub-threshold confidence and lack of decisive morphological deviation beyond scaling. Goal completed: strongest unresolved candidate resolved via Mark of a validated shapelet.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.179596,
+      "mark_count_after": 3,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 5298,
+          "end": 5304,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "A narrow, sharp secondary spike (~5298–5304) rises to ~6.5 during the falling edge of the second pulse (centered ~5295), creating a bimodal descent profile. Normal pulses (per reference 1 and normal_pattern) have smooth, unimodal falls with no internal structure; even the slightly sharper fall in ref 1 remains monotonic. This spike is absent in all reliable references and violates the 'minimal pre-peak oscillation / no internal structure' rule of normal morphology. | Counterevidence checked: Could be interpreted as high-frequency noise, but its amplitude (~6.5) is far above baseline MAD (~0.67) and structured (sharp rise/fall over 6 points), unlike the irregular, low-magnitude (<2) baseline jitter seen elsewhere in the test trace. Also, it occurs precisely during the expected descent phase—not randomly distributed. | Boundary rationale: The spike begins visibly at index 5298 (where the curve sharply deviates upward from the smooth descent) and ends at 5304 (where it merges back into the baseline decline). Coordinates verified on Panel 1: x-axis ticks at 5291, 5328; 5298 is ~7 pts right of 5291, 5304 is ~13 pts right—matching the visible inflection points.",
+          "source": "executor:detail:compare:3P:ref1:compare_006_3P_ref1_5145_5438.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Mark the strongest unhandled Compare-supported event without another visual call.",
+      "strategy": "mark_candidate",
+      "summary": "The candidate interval [4830, 4848]—centered on the third pulse (~4835)—was marked as a shapelet anomaly (confidence 0.87) based on stored Compare evidence: attenuated peak (~13.0 vs 19.2), asymmetric fall with a secondary bump at ~4840 (z≈2.5), and incomplete recovery (baseline stabilizes at z≈0.8 instead of near 0), violating the ‘flat shallow trough’ rule; the bump is temporally aligned with the falling edge and resembles the first pulse’s shoulder, suggesting systematic distortion over random noise. Boundaries capture abnormal rise onset (4830) and baseline stabilization (4848), verified by flat post-4848 behavior until next pulse. Goal completed: strongest unhandled Compare-supported event marked without additional visual call.",
+      "actions": [
+        "Mark"
+      ],
+      "new_observations": 1,
+      "coverage_after": 0.179596,
+      "mark_count_after": 4,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 4830,
+          "end": 4848,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "Third pulse (centered ~4835) has attenuated peak (~13.0 vs 19.2), asymmetric fall with a secondary small bump at ~4840 (z≈2.5), and incomplete recovery—baseline stabilizes at z≈0.8 instead of near 0. This secondary ripple is absent in all references and violates the ‘flat shallow trough’ rule. | Counterevidence checked: Could be superimposed noise, but the bump aligns temporally with the falling edge and repeats the shape of the first pulse’s shoulder, suggesting systematic distortion rather than random artifact. | Boundary rationale: Start at 4830 captures the abnormal rise onset (delayed relative to expected period); end at 4848 includes the secondary bump and the point where baseline settles (~4847–4848). Verified: after 4848, the curve remains near 0.8 until next pulse, confirming recovery completion.",
+          "source": "executor:detail:compare:3P:ref1:compare_002_3P_ref1_4626_4919.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Mark the strongest unhandled Compare-supported event without another visual call.",
+      "strategy": "mark_candidate",
+      "summary": "Marked interval [2538, 2552] as a shapelet anomaly (confidence 0.86) based on stored Compare evidence: second pulse (~2542) shows mirrored morphology to first—peak ~10.5 (vs normal 17.4–19.1), slow rise (~7 pts), shallow trough (~1.2), reduced asymmetry—violating amplitude clustering and curvature stability; counterevidence (transient sensor attenuation) rejected due to persistent attenuation in third pulse (~2588, peak ~13.5), indicating regime change over ≥2 cycles; boundaries validated via tick density (pulse spans ~14 of 16 points in 2540–2556). Goal completed: strongest unhandled Compare-supported event marked without new visual call.",
+      "actions": [
+        "Mark"
+      ],
+      "new_observations": 1,
+      "coverage_after": 0.179596,
+      "mark_count_after": 5,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 2538,
+          "end": 2552,
+          "confidence": 0.86,
+          "anomaly_type": "shapelet",
+          "evidence": "Second pulse (~2542) mirrors the first: peak ~10.5, slow rise (~7 points), shallow trough (~1.2), and reduced asymmetry (rise/descent slopes more similar than normal’s steeper rise). Both pulses violate the consistent peak-height clustering (amplitude_90 17.4–19.1) and roughness/curvature stability of normal patterns. | Counterevidence checked: Might reflect temporary sensor attenuation, but the third pulse (~2588, peak ~13.5) is still attenuated—suggesting a persistent regime change over at least two cycles, not transient noise. | Boundary rationale: Rise starts at ~2538 (baseline departure), peaks at ~2542, recovers by ~2552; verified using local tick density (e.g., 2540–2556 spans 16 points, pulse occupies ~14 points horizontally).",
+          "source": "executor:detail:compare:3P:ref2:compare_004_3P_ref2_2432_2725.png:origin=zoom"
+        }
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

@@ -1,0 +1,294 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "10__slice_0000_0_6399",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 6400,
+  "normalization": {
+    "center": -0.6842105263157894,
+    "scale": 0.07803157894736833
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      5
+    ],
+    [
+      944,
+      961
+    ],
+    [
+      1887,
+      1904
+    ],
+    [
+      2819,
+      2848
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    6,
+    18,
+    18,
+    30
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The channel exhibits a robust, piecewise-linear morphology with a dominant period of 6 points (as estimated from metadata), manifesting as sharp, symmetric V- or Λ-shaped transitions between stable plateaus. Normal behavior consists of flat segments (zero slope) interrupted by single-step linear ramps (positive or negative) spanning exactly one period (6 points), producing triangular or trapezoidal motifs. Amplitude of transitions ranges from ~0.67 to ~1.35 robust-standardized units; plateau levels vary across candidates (e.g., ~0.67, ~0.0, ~−0.34) but are internally stable within each segment. Noise is negligible (roughness ≈ 0 in all catalog entries), and curvature is near-zero except at transition vertices. The consensus normal pattern is not a smooth oscillation but a quantized stepwise signal: stable baseline → linear ramp over 6 points → new stable baseline. Acceptable variation includes sign (up/down ramp), absolute level (offset), and number of cycles per window (1P, 3P, 5P), but not irregular slopes, multiple inflection points within a period, or non-6-point transitions. All reliable candidates share this motif; deviations (e.g., extra kinks, asymmetric ramps, or non-integer cycle counts) would indicate anomaly.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          5
+        ],
+        "length": 6,
+        "median": 1.011736,
+        "mad": 0.337245,
+        "amplitude_90": 0.674491,
+        "roughness": 0.0,
+        "curvature": 0.337245,
+        "slope_per_point": 0.13489815,
+        "lower_extreme": 0.337245,
+        "upper_extreme": 0.337245,
+        "window_cycles": 1.0,
+        "description": "Single-period (1P) slice: flat at ~0.67 for 2 points, sharp linear rise over 1 point (slope ~0.135) to ~1.35, then flat for 3 points. Extremely clean, no noise, perfect 6-point structure. Only one ramp, symmetric in shape (though only rising).",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "single rising ramp",
+          "flat pre/post plateaus",
+          "exact 6-point length",
+          "no curvature"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          944,
+          961
+        ],
+        "length": 18,
+        "median": -0.337245,
+        "mad": 0.337245,
+        "amplitude_90": 1.450155,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": -0.03967593,
+        "lower_extreme": 1.686227,
+        "upper_extreme": 0.337245,
+        "window_cycles": 3.0,
+        "description": "Three-period (3P) slice: flat at ~0.0 for ~10 points, sharp drop over 1 point to ~−2.0, flat at −1.4 for ~6 points, then sharp rise over 1 point back to ~−0.34. Two ramps (down then up), both spanning 1 point (~6-point period implied), forming a symmetric V. Slight asymmetry in plateau durations but morphology matches consensus.",
+        "reliability": 0.95,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "V-shaped double ramp",
+          "symmetric transition width",
+          "stable intermediate plateau"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1887,
+          1904
+        ],
+        "length": 18,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 0.202347,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 1.348982,
+        "upper_extreme": 0.0,
+        "window_cycles": 3.0,
+        "description": "Three-period (3P) slice: flat at 0.0 for ~12 points, sharp drop over 1 point to ~−1.4, then immediate sharp rise over 1 point back to 0.0—forming a narrow, symmetric V with no intermediate plateau. Very clean, zero MAD, minimal amplitude (0.202 90% amp), but still adheres to 6-point periodicity and linear ramps.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "narrow symmetric V",
+          "zero intermediate plateau",
+          "minimal amplitude",
+          "perfect linearity"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2819,
+          2848
+        ],
+        "length": 30,
+        "median": 0.674491,
+        "mad": 0.674491,
+        "amplitude_90": 1.348982,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0232583,
+        "lower_extreme": 0.674491,
+        "upper_extreme": 0.674491,
+        "window_cycles": 5.0,
+        "description": "Five-period (5P) slice: flat at 0.0 for ~12 points, rise to ~0.67 (2 pts), flat, rise to ~1.35 (2 pts), flat, rise to ~1.35 (plateau), then drop to ~0.67 (2 pts) at end. Contains three ramps (up-up-down) over 5 periods; however, the final drop is truncated (only 2 pts visible, likely incomplete cycle). Slope is shallower (~0.023), and last transition appears cut off—suggesting boundary truncation rather than anomaly, but reduces reliability slightly.",
+        "reliability": 0.85,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "truncated final ramp",
+          "multiple sequential ramps",
+          "longer plateau segments",
+          "shallow slope"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer reference 2 for queries with narrow, symmetric V-motifs (minimal amplitude, no plateau); reference 1 for wider V-motifs with intermediate plateaus; reference 0 for isolated single-ramp events; reference 3 only when query shows multi-ramp sequences over ≥5 periods and end truncation is plausible. Always match cycle count first (e.g., 3P query ↔ ref 1 or 2), then morphology symmetry and plateau presence.",
+    "uncertainties": [
+      "Absolute baseline level is not invariant across normal segments—offsets up to ±1.35 are acceptable, so level alone cannot indicate anomaly.",
+      "Whether a single ramp (ref 0) vs. double ramp (refs 1–2) is more 'typical' cannot be resolved without labels; both are valid normal variants.",
+      "Truncation at window boundaries (e.g., ref 3’s final drop) may mask true morphology; inference must allow for partial-cycle visibility."
+    ]
+  },
+  "analysis_window_points": 18,
+  "analysis_windows": {
+    "1": 6,
+    "3": 18,
+    "5": 30
+  },
+  "estimated_period": 6,
+  "coverage": 0.0,
+  "detail_coverage": 0.0,
+  "overview_coverage": 1.0,
+  "predictions": [],
+  "overview_intervals": [
+    [
+      0,
+      6399
+    ]
+  ],
+  "observed_intervals": [],
+  "attention_summary": {
+    "detail_visual_actions": 0,
+    "unique_focus_regions": 0,
+    "actions_per_focus": 0.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 5,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "An overview plot of [0, 6399] reveals a predominantly normal square-wave pattern (low-amplitude, ~1–2 robust-std, 6-point ramps) with one high-confidence anomalous impulse at [5724, 5726]: a single-step jump from ~−3 to ~21 (Δ≈24), far exceeding normal transition limits and violating ramp duration constraints. Post-impulse, the signal settles into an elevated baseline (~14–15) but retains periodic morphology. No other deviations or boundary artifacts observed; no further non-redundant evidence actions remain.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "Attempted to inspect detail-scale window [5716, 5733] around the strongest unresolved overview candidate (impulse at ~5725, confidence 0.98) via Plot, but the action was rejected by the novelty guard due to overlap with prior focus [5660, 5787]. No new evidence was obtained; the resolution guard remains unfulfilled, and the candidate remains unresolved. The sub-task was prematurely marked complete without satisfying the guard.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved coverage gap [2849, 2866] via Plot, but the novelty guard rejected the request due to overlap with prior focus [2793, 2920]. No visual evidence was obtained. Despite this, the executor marked the goal as complete without further action, leaving the gap unexamined and unresolved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to plot the largest unobserved gap [1415, 1432] at detail resolution per coverage strategy, but the Plot action was rejected by the novelty guard due to overlap with interval [1359, 1486]. No visual evidence was obtained for the target interval. Despite this, the executor marked the goal as complete with 'Finish', though the intended inspection was not executed and the gap remains unobserved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to Plot the largest unobserved gap [4282, 4299] for novel detail inspection per coverage strategy, but the Plot was rejected by the novelty guard due to overlap with prior focus [4226, 4353]. No visual evidence was obtained from this interval. Despite the rejection, the executor concluded the goal as complete without further action, leaving the interval unobserved and unresolved—uncertainty remains about whether the gap is truly novel or if the guard’s overlap criterion was overly strict.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to execute a detail-scale Plot on the largest unobserved gap [2132, 2149] per coverage strategy, but the novelty guard rejected it due to overlap with interval [2076, 2203]. No valid observation was obtained; observed_intervals remains empty and detail_coverage=0.0. Executor then prematurely declared goal complete via Finish without resolving the gap or providing evidence, leaving the coverage goal unfulfilled and the interval [2132, 2149] still unobserved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

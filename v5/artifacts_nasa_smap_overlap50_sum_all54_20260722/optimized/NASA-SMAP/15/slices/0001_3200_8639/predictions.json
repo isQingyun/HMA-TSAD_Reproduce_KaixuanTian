@@ -1,0 +1,295 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "15__slice_0001_3200_8639",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 5440,
+  "normalization": {
+    "center": -0.4656575930016911,
+    "scale": 0.756211999611816
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      18
+    ],
+    [
+      941,
+      997
+    ],
+    [
+      1882,
+      1938
+    ],
+    [
+      2785,
+      2879
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    19,
+    57,
+    57,
+    95
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern is a piecewise-constant signal punctuated by sharp, near-vertical upward steps followed by flat plateaus. Each cycle consists of a single step (rise over ~1–2 points) and a sustained plateau (~16–17 points), yielding an effective period of ~19 points per cycle—consistent with the estimated period of 19 and the window_cycles scaling (1P, 3P, 3P, 5P). The signal is highly stable within plateaus: robust MAD < 0.02 across all candidates, roughness ≈ 0, and curvature ≈ 0, indicating no oscillatory or curved behavior. A weak positive linear trend is present across the full series (slope_per_point ≈ 0.0008–0.00096), but locally each candidate exhibits only one step per cycle, not multiple. Amplitude variation (90th-percentile amplitude) scales with baseline level: low-baseline segments (e.g., ref 0 at −1.34) show small absolute swings (~0.017), while high-baseline segments (e.g., ref 3 at +1.27) show larger swings (~0.08), suggesting amplitude grows with magnitude—likely due to multiplicative noise or sensor gain. Peaks are defined by the top of each step (sharp corner), troughs by the bottom of each step (flat pre-step segment); both are flat-topped with no overshoot or ringing. Noise is negligible: no visible jitter, outliers, or irregular fluctuations; all transitions are clean and monotonic. Acceptable variation includes minor differences in step timing (±1 point), plateau length (±1 point), and absolute level (due to global trend), but the core motif—single step → long plateau—is invariant across all four candidates.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          18
+        ],
+        "length": 19,
+        "median": -1.340368,
+        "mad": 0.000252,
+        "amplitude_90": 0.017395,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.00096638,
+        "lower_extreme": 0.00437,
+        "upper_extreme": 0.013025,
+        "window_cycles": 1.0,
+        "description": "Short 19-point segment centered near global minimum; shows one clean step at index ~3–4 rising ~0.0085, then flat plateau until a second steep rise at index ~15–16. Very low amplitude (MAD=0.00025), near-zero noise, and minimal trend distortion over this short window.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "lowest baseline",
+          "smallest amplitude",
+          "cleanest step edges",
+          "no secondary fluctuations"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          941,
+          997
+        ],
+        "length": 57,
+        "median": -0.430459,
+        "mad": 0.011008,
+        "amplitude_90": 0.049916,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.00089885,
+        "lower_extreme": 0.011428,
+        "upper_extreme": 0.038907,
+        "window_cycles": 3.0,
+        "description": "57-point (3-cycle) segment mid-range; contains three identical motifs: flat → step (~1–2 pts) → flat plateau (~16 pts). Steps occur at indices ~58–59, ~77–78, ~91–92. Slightly higher MAD (0.011) and amplitude (0.05) than ref 0, consistent with elevated baseline. No anomalies detected.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "three clear cycles",
+          "moderate baseline",
+          "uniform step height",
+          "no drift within plateau"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1882,
+          1938
+        ],
+        "length": 57,
+        "median": 0.475837,
+        "mad": 0.013361,
+        "amplitude_90": 0.043445,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0007758,
+        "lower_extreme": 0.013361,
+        "upper_extreme": 0.030084,
+        "window_cycles": 3.0,
+        "description": "Another 57-point (3-cycle) segment at higher baseline; same motif as ref 1 but with slightly reduced step height and tighter plateau width. Steps at ~59–60, ~78–79, ~92–93; plateau lengths ~15–16 points. MAD=0.013, amplitude=0.043—slightly compressed vs ref 1, possibly due to local trend curvature, but still fully consistent with normal morphology.",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "higher baseline",
+          "slightly smaller step height",
+          "tighter plateaus",
+          "still monotonic steps"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2785,
+          2879
+        ],
+        "length": 95,
+        "median": 1.27415,
+        "mad": 0.018487,
+        "amplitude_90": 0.079999,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.00090201,
+        "lower_extreme": 0.03521,
+        "upper_extreme": 0.049579,
+        "window_cycles": 5.0,
+        "description": "Long 95-point (5-cycle) segment at highest baseline; displays five clean step–plateau motifs. Steps at ~59–60, ~78–79, ~92–93, ~106–107, ~120–121. Largest amplitude (0.08) and MAD (0.018), reflecting baseline-dependent scaling. One minor irregularity: the fourth step (at ~106) has a slight shoulder before leveling, but remains monotonic and within expected variation.",
+        "reliability": 0.95,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "five cycles",
+          "highest baseline",
+          "largest amplitude",
+          "minor shoulder on 4th step (acceptable)"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer reference 0 for queries near the global minimum (low-magnitude regions) due to its ultra-low noise and precise step definition; use reference 1 for mid-range queries requiring 3-cycle context; reference 2 is interchangeable with ref 1 but better for slightly higher baselines; reference 3 is optimal for high-magnitude or long-window queries (>80 points) where amplitude scaling matters. When query morphology shows extra steps, oscillations, or non-monotonic transitions, it deviates from this consensus and should be flagged.",
+    "uncertainties": [
+      "Exact step width (1 vs 2 points) may vary slightly with sampling or quantization; not pathological",
+      "Baseline-dependent amplitude scaling mechanism (multiplicative vs additive) cannot be confirmed without labels",
+      "Whether the very slight shoulder in ref 3’s 4th step is intrinsic or measurement artifact remains ambiguous—but it does not break the monotonic step+plateau motif"
+    ]
+  },
+  "analysis_window_points": 57,
+  "analysis_windows": {
+    "1": 19,
+    "3": 57,
+    "5": 95
+  },
+  "estimated_period": 19,
+  "coverage": 0.0,
+  "detail_coverage": 0.0,
+  "overview_coverage": 1.0,
+  "predictions": [],
+  "overview_intervals": [
+    [
+      0,
+      5439
+    ]
+  ],
+  "observed_intervals": [],
+  "attention_summary": {
+    "detail_visual_actions": 0,
+    "unique_focus_regions": 0,
+    "actions_per_focus": 0.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 5,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "An overview plot of [0, 5439] reveals a dominant slowly rising trend (from ~−0.75 to ~1.95, slope ≈0.00021/point) with no sustained flat plateaus—contrasting sharply with the reference normal motif of sharp steps (~1–2 pts) followed by long flat plateaus (~16–17 pts). After an initial flat segment until ~2200, the signal exhibits frequent small upward micro-steps (every 20–50 points), yielding ≥100 inflections over [2204, 5439], far exceeding the expected ~1 step per 51 points under normal behavior. This regime is marked as anomalous (interval [2204, 5439], confidence 0.94, type 'frequency') due to violation of the flat-plateau invariant; counterevidence (e.g., downsampling artifacts) was ruled out via comparison to clean reference cycles at same resolution. No further non-redundant evidence actions remain; sub-task completed.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "Attempted to inspect detail-scale window [3793, 3849] (strongest unresolved overview candidate within anomalous regime [2204, 5439]) via Plot, but novelty guard rejected the request due to overlap with prior focus [3757, 3884]. No further evidence was obtained; executor concluded goal complete without refinement or marking, leaving the candidate unresolved and unverified.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "The largest unobserved gap [1868, 1924] lies in the pre-anomaly flat segment (before 2204), potentially containing transition onset or subtle deviation; a Plot attempt on [1868, 1924] was rejected by the novelty guard due to overlap with prior focus [1832, 1959]. No new evidence was obtained, and the sub-task was marked complete without inspection, leaving uncertainty about whether this gap contains anomalous behavior.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [905, 961] at detail scale via Plot, but novelty guard rejected the request due to overlap (reported interval [869, 996]), indicating the focus was not truly novel or overlapped prior evidence. Despite the goal stating this gap was unobserved, the guard’s rejection suggests either misestimation of novelty or implicit coverage from earlier actions. Executor then terminated with 'goal complete', though no visual evidence was obtained and the gap remains uninspected. Uncertainty remains about whether the gap is genuinely novel or already covered implicitly; no anomaly intervals were marked or rejected based on evidence.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [2830, 2886] (within anomalous regime [2204, 5439]) via detail Plot, but novelty guard rejected the request due to overlap with prior focus [2794, 2921]. No new evidence was obtained; Executor concluded goal complete without verification, leaving uncertainty about whether the gap exhibits the suspected high-frequency step anomaly.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [4616, 4672] (within anomalous regime [2204, 5439]) via Plot, but the novelty guard rejected the request due to overlap with prior focus ([4580, 4707]). Despite this, the Executor concluded the sub-goal as complete without acquiring new evidence, leaving unresolved whether the gap exhibits the high-frequency step anomaly. No novel detail-scale evidence was obtained; uncertainty remains about the gap’s behavior.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

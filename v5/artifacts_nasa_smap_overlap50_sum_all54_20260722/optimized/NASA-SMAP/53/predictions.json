@@ -1,0 +1,247 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "53",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8579,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.29607180324047094,
+  "detail_coverage": 0.29607180324047094,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 2156,
+      "end": 2159,
+      "confidence": 0.98,
+      "vote_score": 0.98,
+      "mean_vote_confidence": 0.98,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Ultra-deep negative spike (min ~−110) over 3 points, symmetric and isolated; adjacent points (2153, 2157) at baseline (~0). Exceeds normal amplitude (>50×) and contradicts all reference cycles which show only flat troughs or micro-spikes <±0.3 MAD.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          2154,
+          2156
+        ],
+        "numeric_interval": [
+          2156,
+          2159
+        ],
+        "threshold": 0.168893,
+        "spike_count": 2
+      }
+    },
+    {
+      "start": 3892,
+      "end": 3916,
+      "confidence": 0.85,
+      "vote_score": 0.85,
+      "mean_vote_confidence": 0.425,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Double-step overshoot during ascent: two consecutive +0.25 jumps within 4 points (3860→3862, 3863→3866) followed by flat segment, breaking the reference’s monotonic single-step progression (e.g., ref 1, ref 3). Morphology diverges from learned normal staircase motif; anomaly ends when ascent resumes normal slope at ~3889.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          3859,
+          3888
+        ],
+        "numeric_interval": [
+          3892,
+          3916
+        ],
+        "threshold": 0.168893,
+        "spike_count": 7
+      }
+    },
+    {
+      "start": 5251,
+      "end": 5254,
+      "confidence": 1.0,
+      "vote_score": 1.97,
+      "mean_vote_confidence": 0.985,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0, 1]; representative local evidence: Isolated impulse dropping to ~−105 robust units (≈155× MAD), fully contained within [5254,5255]; no reference profile exhibits any deviation >±0.3 MAD. Recovery by 5256 confirms transient nature.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0,
+        1
+      ],
+      "supporting_prediction_count": 2,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5254,
+          5255
+        ],
+        "numeric_interval": [
+          5251,
+          5254
+        ],
+        "threshold": 0.168893,
+        "spike_count": 2
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8578
+    ]
+  ],
+  "observed_intervals": [
+    [
+      899,
+      1211
+    ],
+    [
+      2093,
+      2386
+    ],
+    [
+      3667,
+      4263
+    ],
+    [
+      5034,
+      5534
+    ],
+    [
+      6676,
+      7216
+    ],
+    [
+      7751,
+      8044
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 14,
+    "unique_focus_regions": 8,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 1,
+    "novelty_redirects": 5,
+    "exploration_targets": 5,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.75,
+    "resolved_event_intervals": [
+      [
+        2122,
+        2188
+      ],
+      [
+        3827,
+        3920
+      ],
+      [
+        5218,
+        5287
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/53/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "53__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/53/slices/0000_0_6399/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.1996875,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 1.5,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 1,
+        "novelty_redirects": 2,
+        "exploration_targets": 2,
+        "resolved_event_intervals": [
+          [
+            2122,
+            2188
+          ],
+          [
+            3827,
+            3920
+          ],
+          [
+            5222,
+            5287
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8578,
+      "length": 5379,
+      "sample_id": "53__slice_0001_3200_8578",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/53/slices/0001_3200_8578/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.2647332217884365,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            2018,
+            2083
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 4,
+    "voted_prediction_count": 3,
+    "voted_anomaly_points": 33,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.97,
+    "covered_points": 8579,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

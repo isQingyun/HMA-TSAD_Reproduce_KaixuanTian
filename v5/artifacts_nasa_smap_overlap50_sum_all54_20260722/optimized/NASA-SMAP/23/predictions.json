@@ -1,0 +1,185 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "23",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8505,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.1427395649617872,
+  "detail_coverage": 0.1427395649617872,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 5692,
+      "end": 5710,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.435,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Consensus from 2 distinct detail proposals ([2492,2504], [2496,2510]); weighted boundary [2492,2510], majority type shapelet. Representative evidence: Pulse centered at ~2500 has a broader plateau (~15 points vs. normal 13–15) and a subtly rounded, non-flat top—visible as a gentle convex curvature on the plateau, unlike the perfectly flat plateaus in references 0, 2, and 3. Amplitude remains nominal, but morphology diverges: edges are slightly less vertical, and the plateau lacks the zero roughness/MAD=0.0 property of normal pulses. | Counterevidence checked: Minor plateau waviness is allowed per reference 3 (micro-undulations), but this is a systematic rounding—not high-frequency ripple—and exceeds acceptable variation. Not explainable by phase jitter (<1 point) since width increase is ~5 points. | Boundary rationale: Start at 2496 captures the onset of the rising edge (first deviation from baseline slope); end at 2510 covers the full plateau before the falling edge begins. This interval encloses the entire abnormal pulse morphology, inclusive of transition zones where shape deviates.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5830,
+      "end": 5846,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.46,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Falling edge deviates from learned normal: instead of a 1–2 point vertical drop, it decays over 16 points with concave-down curvature, forming a sloped ramp while rise and plateau remain normal. Matches no reference profile (refs 0/2 show zero curvature; ref 3 shows only high-frequency ripple, not monotonic ramp).",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8504
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1306,
+      1449
+    ],
+    [
+      2031,
+      2174
+    ],
+    [
+      2757,
+      2900
+    ],
+    [
+      4208,
+      4490
+    ],
+    [
+      5638,
+      5846
+    ],
+    [
+      7073,
+      7217
+    ],
+    [
+      7788,
+      7932
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 14,
+    "unique_focus_regions": 9,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 2,
+    "novelty_redirects": 7,
+    "exploration_targets": 7,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.555556,
+    "resolved_event_intervals": [
+      [
+        5660,
+        5742
+      ],
+      [
+        5798,
+        5878
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/23/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "23__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/23/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.119375,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.2,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 4,
+        "exploration_targets": 4,
+        "resolved_event_intervals": [
+          [
+            5798,
+            5878
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8504,
+      "length": 5305,
+      "sample_id": "23__slice_0001_3200_8504",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/23/slices/0001_3200_8504/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.11027332704995288,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            2460,
+            2542
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 2,
+    "voted_prediction_count": 2,
+    "voted_anomaly_points": 36,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.92,
+    "covered_points": 8505,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

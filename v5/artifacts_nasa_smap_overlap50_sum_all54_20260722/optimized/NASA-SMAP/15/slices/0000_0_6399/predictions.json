@@ -1,0 +1,291 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "15__slice_0000_0_6399",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 6400,
+  "normalization": {
+    "center": -0.9814069211307146,
+    "scale": 0.014515668023526067
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      18
+    ],
+    [
+      941,
+      997
+    ],
+    [
+      1882,
+      1938
+    ],
+    [
+      2785,
+      2879
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    19,
+    57,
+    57,
+    95
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern is a piecewise-constant staircase with a consistent upward trend, composed of flat plateaus separated by sharp, near-vertical step increases. Each plateau lasts approximately 19 points (1 cycle), matching the estimated period of 19; longer windows (3P, 5P) contain 3 or 5 such cycles respectively. The steps occur roughly every 19 points, with minor jitter in exact step timing (±1–2 points) across candidates. Plateau levels increase monotonically across the series, reflecting the underlying linear+quadratic trend in the full time series. Amplitude within each plateau is extremely low: MAD ≤0.0185, 90% amplitude ≤0.08, and roughness/curvature are zero—indicating no oscillatory or noisy dynamics, only quantized-level stability. Peaks are the top edges of steps (flat tops), troughs are the bottom edges (flat bottoms); both are horizontal segments, not rounded extrema. Noise is negligible—values are nearly constant within plateaus, with only tiny quantization-like fluctuations (<0.001). The pattern is highly stable across candidates despite differing absolute levels (medians range from −1.34 to +1.27), confirming that level shifts are part of the expected trend, not anomalies. Acceptable variation includes: (1) ±1–2 point shift in step timing, (2) slight differences in step height (0.01–0.02 per step), (3) minor plateau length variation (18–20 points), and (4) consistent monotonic progression without reversals or overshoots.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          18
+        ],
+        "length": 19,
+        "median": -1.340368,
+        "mad": 0.000252,
+        "amplitude_90": 0.017395,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.00096638,
+        "lower_extreme": 0.00437,
+        "upper_extreme": 0.013025,
+        "window_cycles": 1.0,
+        "description": "A single-cycle (1P) segment showing two flat plateaus connected by one sharp step at index ~3–4, then another step at ~15–16. Very low amplitude (MAD=0.00025), near-perfect flatness, minimal noise. Represents the finest-grained morphology of the staircase.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "ultra-low MAD",
+          "two clear plateaus in 19 points",
+          "step timing at ~3 and ~15"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          941,
+          997
+        ],
+        "length": 57,
+        "median": -0.430459,
+        "mad": 0.011008,
+        "amplitude_90": 0.049916,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.00089885,
+        "lower_extreme": 0.011428,
+        "upper_extreme": 0.038907,
+        "window_cycles": 3.0,
+        "description": "Three-cycle (3P) segment with three plateaus and two intermediate steps, plus a final step near the end. Plateaus are slightly noisier (MAD=0.011) but still flat; step heights ~0.01–0.02. Matches the 19-point cadence well; step positions align with multiples of ~19 (e.g., ~58, ~116 global offset).",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "three plateaus",
+          "consistent step spacing",
+          "slightly higher MAD than ref 0"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1882,
+          1938
+        ],
+        "length": 57,
+        "median": 0.475837,
+        "mad": 0.013361,
+        "amplitude_90": 0.043445,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0007758,
+        "lower_extreme": 0.013361,
+        "upper_extreme": 0.030084,
+        "window_cycles": 3.0,
+        "description": "Another 3P segment, similar to ref 1 but with higher baseline (median=0.476) and slightly smaller step heights. Plateaus equally flat; step timing again aligns with ~19-point intervals. Minor deviation: one plateau appears 20 points long vs. 19, but within acceptable variation.",
+        "reliability": 0.97,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "higher baseline",
+          "tighter amplitude (amp_90=0.043)",
+          "same step cadence"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2785,
+          2879
+        ],
+        "length": 95,
+        "median": 1.27415,
+        "mad": 0.018487,
+        "amplitude_90": 0.079999,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.00090201,
+        "lower_extreme": 0.03521,
+        "upper_extreme": 0.049579,
+        "window_cycles": 5.0,
+        "description": "Five-cycle (5P) segment showing five plateaus and four steps, confirming the repeating motif over longer horizon. Step heights vary slightly (0.01–0.02), plateau lengths mostly 19 points, with one possibly 20-point plateau. Highest MAD (0.0185) and amplitude (0.08) due to cumulative trend, but morphology remains identical: flat plateaus, sharp steps, no curvature.",
+        "reliability": 0.96,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "five plateaus",
+          "longest context",
+          "largest absolute values but same shape"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer reference 0 for queries with ≤20 points or when high-resolution step detection is needed (e.g., identifying early-step anomalies). Use references 1 or 2 for queries of ~50–60 points to match 3-cycle morphology and moderate noise tolerance. Use reference 3 for queries >80 points or when assessing long-horizon consistency; its 5-cycle structure helps detect missing/extra steps. All references agree on step cadence (~19), so mismatched step timing (e.g., steps at 10, 30, 50) should trigger anomaly suspicion regardless of chosen reference.",
+    "uncertainties": [
+      "Exact step height distribution (whether deterministic or stochastic) cannot be confirmed from 4 samples",
+      "Whether plateau length strictly equals period (19) or allows ±1 variation in all contexts",
+      "Potential for very rare flat segments without steps (i.e., single-cycle anomalies) is unobserved and thus undefined"
+    ]
+  },
+  "analysis_window_points": 57,
+  "analysis_windows": {
+    "1": 19,
+    "3": 57,
+    "5": 95
+  },
+  "estimated_period": 19,
+  "coverage": 0.0,
+  "detail_coverage": 0.0,
+  "overview_coverage": 1.0,
+  "predictions": [],
+  "overview_intervals": [
+    [
+      0,
+      6399
+    ]
+  ],
+  "observed_intervals": [],
+  "attention_summary": {
+    "detail_visual_actions": 0,
+    "unique_focus_regions": 0,
+    "actions_per_focus": 0.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 5,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "An overview plot of [0, 6399] reveals a dominant piecewise-constant staircase with monotonic upward trend, matching the reference normal pattern until ~index 5388; thereafter, a high-amplitude anomalous interval [5388, 6399] (confidence 0.96) exhibits dense, small-step or ramp-like ascent (~55 robust-std units over ~210 points), violating expected plateau structure (normal step spacing ~19, height ≤0.02). Evidence rules out pure polynomial trend (cubic term contributes <1 unit) and downsampling artifacts. No other deviations observed; task completed per fallback plan with no further non-redundant actions.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "Attempted to inspect detail-scale window [5865, 5921] (strongest unresolved overview candidate within [5388, 6399]) via Plot, but novelty guard rejected the request due to overlap with prior focus [5829, 5956]. No new evidence was obtained; task was prematurely marked complete without resolution of the candidate’s morphology. Uncertainty remains about whether the interval contains a dense-step/ramp anomaly or another deviation.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [2904, 2960] via Plot, but novelty guard rejected the request due to overlap with prior focus [2868, 2995]. No visual evidence was obtained for this interval. The sub-task was marked complete without further action, though the target gap remains unexamined and its conformity to the normal staircase pattern (plateaus every ~19 points, sharp steps, ultra-low MAD) is unresolved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [1423, 1479] via detail Plot, but novelty guard rejected the request due to overlap with prior focus ([1387, 1514]). No visual evidence was obtained for this interval. The sub-task was marked complete without new evidence, leaving the conformity of [1423, 1479] (e.g., step timing, plateau flatness, MAD) unresolved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to Plot novel interval [4384, 4440] (largest unobserved gap) to gather first visual evidence under coverage strategy; novelty guard rejected the request due to overlap with interval [4348, 4475], though no prior observed_intervals were recorded and recent_plots only contained a full-range overview [0,6399]. Executor then terminated with 'goal complete', despite no successful observation of the target interval and unresolved uncertainty about whether the rejection was justified or due to guard misconfiguration. No anomaly was marked, and the interval remains unexamined.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [2163, 2219] via Plot, but the novelty guard rejected the request due to overlap with interval [2127, 2254]. No visual evidence was obtained for this region. Despite the rejection, the Executor marked the goal as complete, though the intended coverage of [2163, 2219] remains unfulfilled and no anomaly assessment or comparison could occur. Uncertainty persists regarding whether this gap contains normal staircase structure or anomalies.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

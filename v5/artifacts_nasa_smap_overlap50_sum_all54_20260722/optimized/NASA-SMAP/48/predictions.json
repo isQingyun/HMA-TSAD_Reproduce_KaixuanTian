@@ -1,0 +1,330 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "48",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8071,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.2538718870028497,
+  "detail_coverage": 0.2538718870028497,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 2412,
+      "end": 2415,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.94,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Extreme positive spike (z≈3.4) at 2410, exceeding all reference amplitudes (max ±2.2) and 90th percentile (≤2.43); occurs mid-rise phase where normal pattern is smooth and monotonic (slope ≤0.009/pt), violating learned sawtooth morphology.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          2409,
+          2411
+        ],
+        "numeric_interval": [
+          2412,
+          2415
+        ],
+        "threshold": 2.293295,
+        "spike_count": 2
+      }
+    },
+    {
+      "start": 3986,
+      "end": 4011,
+      "confidence": 0.89,
+      "vote_score": 0.89,
+      "mean_vote_confidence": 0.445,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: 26-point near-flat segment (z≈−0.5, slope ≈0) breaks the mandatory monotonic rise/fall structure of the sawtooth cycle; references show no flat intervals >5 pts, and roughness/curvature (0.135) is violated throughout.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5370,
+      "end": 5379,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.435,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Sharp negative spike reaching z≈−3.0, deeper than any normal trough (max ≈−2.0) and narrower (<7 pts) than normal broad troughs (≥15 pts); isolated between otherwise normal cycles; interval [2175,2181] tightly encloses full descent and recovery.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5375,
+          5381
+        ],
+        "numeric_interval": [
+          5370,
+          5379
+        ],
+        "threshold": 2.293295,
+        "spike_count": 6
+      }
+    },
+    {
+      "start": 5552,
+      "end": 5555,
+      "confidence": 0.85,
+      "vote_score": 0.85,
+      "mean_vote_confidence": 0.425,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Narrow impulsive trough (width 5 pts, depth z≈−3.0) centered at 2361, violating normal trough morphology (broad, ≥15 pts, ≤−2.0); local curvature extreme vs. reference roughness 0.1349; interval [2359,2363] captures full event without including next cycle’s rise.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5559,
+          5563
+        ],
+        "numeric_interval": [
+          5552,
+          5555
+        ],
+        "threshold": 2.293295,
+        "spike_count": 2
+      }
+    },
+    {
+      "start": 5736,
+      "end": 5738,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.46,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Sharp negative impulse (z≈−3.0) at 5735, far below normal trough range (−1.0 to −2.0) and outside reference extremes (none < −2.2); disrupts expected monotonic rise segment, violating smooth sawtooth constraint.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5733,
+          5738
+        ],
+        "numeric_interval": [
+          5736,
+          5738
+        ],
+        "threshold": 2.293295,
+        "spike_count": 1
+      }
+    },
+    {
+      "start": 7871,
+      "end": 7875,
+      "confidence": 0.96,
+      "vote_score": 0.96,
+      "mean_vote_confidence": 0.96,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Isolated impulse rising from ~−1.0 to >4.0 within 3 points, exceeding all normal peaks (max ~2.2) and violating smooth morphology; roughness locally spikes far above reference 0.1349; fully enclosed by [4669,4671] with no adjacent normal structure included.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          7869,
+          7871
+        ],
+        "numeric_interval": [
+          7871,
+          7875
+        ],
+        "threshold": 2.293295,
+        "spike_count": 3
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8070
+    ]
+  ],
+  "observed_intervals": [
+    [
+      2219,
+      2547
+    ],
+    [
+      3859,
+      4394
+    ],
+    [
+      5239,
+      5870
+    ],
+    [
+      6902,
+      7177
+    ],
+    [
+      7682,
+      7957
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 14,
+    "unique_focus_regions": 7,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 2,
+    "novelty_redirects": 3,
+    "exploration_targets": 3,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.0,
+    "resolved_event_intervals": [
+      [
+        2377,
+        2443
+      ],
+      [
+        3954,
+        4043
+      ],
+      [
+        5343,
+        5413
+      ],
+      [
+        5527,
+        5595
+      ],
+      [
+        5701,
+        5770
+      ],
+      [
+        7837,
+        7903
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/48/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "48__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/48/slices/0000_0_6399/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.15,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            2377,
+            2443
+          ],
+          [
+            3954,
+            4043
+          ],
+          [
+            5701,
+            5770
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8070,
+      "length": 4871,
+      "sample_id": "48__slice_0001_3200_8070",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/48/slices/0001_3200_8070/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.27242865941285155,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 2,
+        "exploration_targets": 2,
+        "resolved_event_intervals": [
+          [
+            2143,
+            2213
+          ],
+          [
+            2327,
+            2395
+          ],
+          [
+            4637,
+            4703
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 6,
+    "voted_prediction_count": 6,
+    "voted_anomaly_points": 52,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.96,
+    "covered_points": 8071,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

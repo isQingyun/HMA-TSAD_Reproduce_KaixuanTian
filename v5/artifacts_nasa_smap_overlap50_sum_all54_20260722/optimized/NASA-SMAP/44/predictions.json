@@ -1,0 +1,203 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "44",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8505,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.21293356848912404,
+  "detail_coverage": 0.21293356848912404,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 3703,
+      "end": 3720,
+      "confidence": 0.91,
+      "vote_score": 0.91,
+      "mean_vote_confidence": 0.455,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Bimodal spike with two nearly equal-height peaks (3707, 3710) and broad width (~12 pts FWHM), violating the strictly unimodal, asymmetric spike morphology conserved across all high-reliability references (refs 0, 2, 3). No reference shows co-equal twin peaks; shoulders in refs are subdominant (<30% height) and precede the main peak, not form a symmetric doublet.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 4499,
+      "end": 4592,
+      "confidence": 0.93,
+      "vote_score": 0.93,
+      "mean_vote_confidence": 0.465,
+      "anomaly_type": "frequency",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Consensus from 2 distinct detail proposals ([1299,1390], [1389,1392], [1391,1430]); weighted boundary [1299,1392], majority type frequency. Representative evidence: A 91-point flat-zero plateau where two normal spikes (expected at ~1383 and ~1481) are entirely absent; breaks the strict ~98-pt cadence and eliminates the defining spike-trough motif for >90% of a 2-cycle span. | Counterevidence checked: Could be interpreted as a prolonged trough—but normal troughs are noisy, irregular, and never perfectly flat for >20 pts; reference troughs always contain small oscillations (e.g., ref 0: −1 to 0 with jitter; ref 1: flat segment is only 15 pts and embedded within a spike cycle). | Boundary rationale: Start=1299 is where the signal drops to zero and stays flat; end=1390 is the last zero point before the sharp rise at 1391. This interval fully captures the anomalous absence of motif structure.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 7962,
+      "end": 8010,
+      "confidence": 0.82,
+      "vote_score": 0.82,
+      "mean_vote_confidence": 0.82,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Consensus from 2 distinct detail proposals ([4762,4782], [4798,4810]); weighted boundary [4762,4810], majority type shapelet. Representative evidence: A sustained flat segment at ~0.7 for 13 points (4798–4810) deviates from the normal trough morphology, which always exhibits fine oscillations, shallow dips, or irregularity (refs 0–3 all show non-flat troughs; even ref 1’s ‘flat segment’ at 950–965 is only ~15 pts and occurs mid-spike decay, not in a trough). This plateau occurs during expected trough phase (between spikes at 4767 and 4860), where variability should be present. | Counterevidence checked: Could be a transient sensor stabilization or artifact; however, reference memory explicitly notes such flat segments as ambiguous but rare, and none appear in trough regions—only once mid-decay in ref 1, which was deemed possibly artifactual but not structural. Here, location in a trough makes benign explanation weaker. | Boundary rationale: Signal rises to 0.7 at 4798, stays constant until 4810 (where it begins descending), covering the full flat regime inclusively.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8504
+    ]
+  ],
+  "observed_intervals": [
+    [
+      2214,
+      2507
+    ],
+    [
+      3558,
+      3853
+    ],
+    [
+      4453,
+      4746
+    ],
+    [
+      4979,
+      5273
+    ],
+    [
+      5889,
+      6182
+    ],
+    [
+      7813,
+      8150
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 11,
+    "unique_focus_regions": 6,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 4,
+    "novelty_redirects": 1,
+    "exploration_targets": 1,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.833333,
+    "resolved_event_intervals": [
+      [
+        3671,
+        3752
+      ],
+      [
+        4467,
+        4624
+      ],
+      [
+        7930,
+        8042
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/44/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "44__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/44/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.13828125,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 5,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 1.666667,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            3671,
+            3752
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8504,
+      "length": 5305,
+      "sample_id": "44__slice_0001_3200_8504",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/44/slices/0001_3200_8504/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.17455230914231856,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            1267,
+            1424
+          ],
+          [
+            4730,
+            4842
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 3,
+    "voted_prediction_count": 3,
+    "voted_anomaly_points": 161,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.93,
+    "covered_points": 8505,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

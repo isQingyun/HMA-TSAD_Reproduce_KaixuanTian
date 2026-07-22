@@ -1,0 +1,215 @@
+{
+  "schema_version": 2,
+  "dataset": "UCR",
+  "sample_id": "138",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 4500,
+  "normalization": {
+    "center": 0.21851037347206612,
+    "scale": 0.1988092126514091
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      548
+    ],
+    [
+      817,
+      1365
+    ],
+    [
+      1634,
+      2182
+    ],
+    [
+      2451,
+      2999
+    ]
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The time series exhibits a highly regular quasi-periodic oscillation with a dominant period near 183 points, consistent with the estimated period. Each cycle consists of a sharp, near-symmetric upward ramp (≈50–60 points) to a smooth, rounded peak (robust standardized value ≈3.0–4.0), followed by a slower, concave-down decay (≈120–130 points) to a shallow trough near −1.0. The baseline level drifts subtly across candidates: median values range from −0.15 to +0.16, indicating mild non-stationarity but no strong trend within individual windows. Amplitude (90th percentile span) is stable at ~4.0–4.5, and roughness (~0.03) and curvature (~0.014) are tightly clustered, confirming morphological consistency. Peaks are consistently broad and unimodal; troughs are flat-bottomed and gently rounded, never sharp or jagged. Noise is low: the signal is smooth with minimal high-frequency jitter, and boundary truncation is absent—each window captures full cycles without cut-off peaks or troughs. Acceptable variation includes small shifts in absolute level (±0.3), minor asymmetry in rise/fall slopes, and ±0.2 variation in peak height; deviations beyond this—e.g., distorted peak shape, abrupt troughs, or excessive slope—suggest anomaly.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          548
+        ],
+        "length": 549,
+        "median": -0.147057,
+        "mad": 0.656828,
+        "amplitude_90": 4.144135,
+        "roughness": 0.029576,
+        "curvature": 0.013556,
+        "slope_per_point": 0.00064989,
+        "lower_extreme": 0.927939,
+        "upper_extreme": 3.810751,
+        "description": "Three clean, well-resolved cycles; peaks at ~140, 317, 490; troughs near 86, 259, 432; baseline slightly negative; smooth decay after peaks; no visible artifacts.",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "slightly lower peak heights (~3.0)",
+          "most negative median",
+          "cleanest trough symmetry"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          817,
+          1365
+        ],
+        "length": 549,
+        "median": -0.105158,
+        "mad": 0.649023,
+        "amplitude_90": 3.894549,
+        "roughness": 0.032041,
+        "curvature": 0.013966,
+        "slope_per_point": -0.00033282,
+        "lower_extreme": 0.954639,
+        "upper_extreme": 4.010795,
+        "description": "Three full cycles; peaks at ~874, 1047, 1220; slightly higher peak amplitude (~3.9); baseline less negative; decay phase shows very slight inflection near 1100 but remains smooth.",
+        "reliability": 0.96,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "highest upper extreme (4.01)",
+          "least negative median",
+          "minor decay inflection"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1634,
+          2182
+        ],
+        "length": 549,
+        "median": 0.157737,
+        "mad": 0.682706,
+        "amplitude_90": 4.475304,
+        "roughness": 0.030808,
+        "curvature": 0.013965,
+        "slope_per_point": -0.0001934,
+        "lower_extreme": 1.058976,
+        "upper_extreme": 3.864972,
+        "description": "Three cycles; peaks at ~1778, 1951, 2124; peak heights ~3.9–4.0; baseline mildly positive; troughs slightly shallower; overall morphology identical to others, with excellent continuity.",
+        "reliability": 0.99,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "highest median (+0.16)",
+          "largest amplitude_90 (4.48)",
+          "most symmetric rise/decay"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2451,
+          2999
+        ],
+        "length": 549,
+        "median": 0.124876,
+        "mad": 0.67942,
+        "amplitude_90": 4.33342,
+        "roughness": 0.029987,
+        "curvature": 0.014378,
+        "slope_per_point": 0.00060417,
+        "lower_extreme": 1.125521,
+        "upper_extreme": 3.894549,
+        "description": "Three cycles; peaks at ~2508, 2681, 2883; peak height ~4.0; baseline similar to ref 2; final decay extends toward edge but remains complete; minor waviness in trough region (2595–2625) but within noise tolerance.",
+        "reliability": 0.95,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "slight high-frequency ripple in trough zone",
+          "longest visible decay segment",
+          "upper_extreme matches ref 1"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer reference 2 for queries with neutral/mildly positive baseline and maximal amplitude; use reference 0 when query baseline is more negative and peaks are modest (~3.0); reference 1 is best match for queries with highest peak values (~4.0) and flatter decay; reference 3 serves as fallback for queries with extended decay or minor trough ripple—its slight waviness is acceptable normal variation. Always prioritize morphological fidelity (peak shape, trough roundness, cycle symmetry) over exact y-level alignment.",
+    "uncertainties": [
+      "Exact phase alignment across candidates is not fixed—peak indices vary by ~10–20 points, so absolute x-position is unreliable; only relative cycle structure matters.",
+      "Whether the subtle baseline drift (−0.15 → +0.16) reflects true non-stationarity or sampling variance remains unresolved.",
+      "The minor inflection in ref 1’s decay and ripple in ref 3’s trough lie at the edge of normal variation; future queries with stronger versions may be anomalous."
+    ]
+  },
+  "analysis_window_points": 549,
+  "estimated_period": 183,
+  "coverage": 0.122,
+  "detail_coverage": 0.122,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 1188,
+      "end": 1194,
+      "confidence": 0.89,
+      "anomaly_type": "shapelet",
+      "evidence": "A distinct secondary local maximum appears ~5 points after the primary peak at ~1187, creating a double-peaked morphology inconsistent with the learned normal pattern where all peaks are broad and unimodal (confirmed across all 4 reference profiles). The anomaly spans the full distorted peak segment from deviation onset (slope flattening/reversal at 1188) through merger back into decay (by 1194).",
+      "source": "multi-scale-reflection"
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      4499
+    ]
+  ],
+  "observed_intervals": [
+    [
+      916,
+      1464
+    ]
+  ],
+  "subtask_history": [
+    {
+      "goal": "Inspect the global overview, establish the dominant pattern, and identify candidate deviations.",
+      "strategy": "overview",
+      "summary": "A full-series overview (Plot [0,4499]) revealed a highly regular quasi-periodic oscillation with stable amplitude (~4.0–4.5), period ~183, and smooth concave-down decay phases; one candidate deviation was noted as a narrow notch in the decay around index 1183 ([1170,1195], confidence 0.82). A detail Plot ([1118,1245]) confirmed a sharp secondary hump at [1189,1192]—a steep, narrow (~3–4 pt), asymmetric local maximum mid-decay violating the normal 'broad and unimodal peak' motif (confidence 0.87). Compare against reference 3 (selected via automatic shape matching) over [1189,1192] reinforced this: the test segment shows a double-peaked structure absent in all references, with high shape fidelity elsewhere; the anomaly interval was refined to [1188,1196] to fully capture the inflection-to-rejoin transition. This interval was Marked with confidence 0.87 as a shapelet anomaly. No other anomalies were identified; the goal of coarse localization and verification is complete.",
+      "actions": [
+        "Plot",
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 4,
+      "coverage_after": 0.122,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 1188,
+          "end": 1196,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "The second peak in the test interval (centered at ~1190) displays a distinct secondary local maximum ~5 points after the primary peak, creating a double-peaked morphology. This violates the normal_pattern requirement that 'peaks are consistently broad and unimodal' and is absent in all references including the best-matching ref 3. | Counterevidence checked: Phase jitter could shift a nearby small ripple into the peak region—but the ripple would need to be unusually large and positioned precisely at the decay onset; references show only minor waviness in trough zones (2595–2625), never in peak regions, and no reference exhibits such a pronounced post-peak bump. | Boundary rationale: The anomaly begins where the curve deviates from the expected smooth concave-down decay after the main peak (visible at 1188, where slope flattens then rises again), and ends when the secondary bump merges back into the decay (by 1196, the curve resumes monotonic descent). Coordinates are estimated from tick spacing (each major tick = 30 units; 1188 is ~2/3 from 1170 to 1200, matching visual inflection).",
+          "source": "executor:detail:compare:3:compare_002_916_1464.png"
+        }
+      }
+    },
+    {
+      "goal": "Compare the detailed candidate with the automatically best-matching learned reference.",
+      "strategy": "compare",
+      "summary": "The strongest detail candidate interval [916, 1464] was compared against the automatically selected best-matching reference (index 3, [2451, 2999]) using Compare. The comparison confirmed a localized double-peaked motif at [1185, 1192]—a secondary peak ~2–3 points after the primary, with a >0.5 z-unit dip persisting over ~5 points—violating the learned normal rule that peaks are consistently broad and unimodal; this anomaly is not explainable by phase shift, scaling, or truncation. Evidence is supported by detail plots and two independent Compare results, yielding confidence 0.87. The interval [1185, 1192] was subsequently marked as a shapelet anomaly and the sub-goal completed via Finish. No unresolved uncertainty remains.",
+      "actions": [
+        "Compare",
+        "Mark",
+        "Finish"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.122,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "The double-peaked shapelet at [1185, 1192] is confirmed by detail Plot and Compare against the best-matching reference (ref 3); it violates the learned normal motif (unimodal, broad peaks) and has no plausible explanation via phase, scaling, or truncation. Mark already exists with strong confidence (0.87) and precise evidence. Sub-goal achieved."
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

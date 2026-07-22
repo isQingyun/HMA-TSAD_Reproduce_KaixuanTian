@@ -1,0 +1,340 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "25__slice_0001_3200_8511",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 5312,
+  "normalization": {
+    "center": -1.0,
+    "scale": 0.7869245929021889
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      49
+    ],
+    [
+      910,
+      1059
+    ],
+    [
+      1820,
+      1969
+    ],
+    [
+      2630,
+      2879
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    50,
+    150,
+    150,
+    250
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern consists of sharp, near-vertical upward transitions from baseline (robust standardized value ≈ 0.0) to a plateau at ≈2.47, followed by equally sharp downward transitions back to baseline, forming rectangular pulses. Each pulse spans approximately one period (≈50 points), with consistent amplitude (90th-percentile ≈2.47) and zero median/MAD across all candidates, indicating no offset or scale drift. Pulses are well-separated by flat baseline segments of variable length; the inter-pulse spacing is not fixed but the pulse shape itself is highly reproducible. No trend is present within individual pulses (slope_per_point ≈ 0 except for candidate 1, which shows a negligible −0.0166 slope over 150 points—likely noise). Curvature and roughness are zero, confirming piecewise-linear morphology with abrupt edges. Noise is effectively absent: all transitions occur in ≤2–3 points, and baseline is perfectly flat. Boundary truncation is minimal and consistent: pulses are fully captured within each window (no half-pulses at edges), and windows are aligned to pulse onsets/offsets. Acceptable variation includes minor timing jitter in pulse onset (±1–2 indices) and occasional slight asymmetry in rise vs fall steepness, but amplitude, duration (~50 pts), and plateau height remain invariant. The 5-cycle window (candidate 3) confirms the pattern repeats identically across multiple cycles without degradation.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          49
+        ],
+        "length": 50,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 2.469966,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 0.0,
+        "upper_extreme": 2.469966,
+        "window_cycles": 1.0,
+        "description": "Single clean rectangular pulse spanning ~8–22 indices: sharp rise from 0 to 2.47 in ~2 points, flat plateau for ~12 points, sharp fall back to 0 in ~2 points. Perfectly centered in 50-point window with full pulse visible and no contamination.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "single pulse",
+          "symmetric rise/fall",
+          "zero baseline noise",
+          "exact 50-point window alignment"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          910,
+          1059
+        ],
+        "length": 150,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 2.469966,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": -0.01657695,
+        "lower_extreme": 0.0,
+        "upper_extreme": 2.469966,
+        "window_cycles": 3.0,
+        "description": "Three pulses in 150-point window: first pulse at ~917–922, second at ~1004–1009, third at ~1019–1024. All pulses match candidate 0’s shape. A very slight negative slope (−0.0166 per point) is visible across the entire 150-point span, but it does not affect pulse morphology—plateau levels remain identical. Likely due to global trend removal artifact rather than true drift.",
+        "reliability": 0.95,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "three pulses",
+          "negligible global slope",
+          "identical pulse amplitude/duration",
+          "consistent inter-pulse gaps"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1820,
+          1969
+        ],
+        "length": 150,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 2.469966,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 0.0,
+        "upper_extreme": 2.469966,
+        "window_cycles": 3.0,
+        "description": "Three pulses in 150-point window (1820–1969), nearly identical to candidate 1: pulses at ~1827–1832, ~1882–1887, ~1898–1903. No measurable trend (slope_per_point = 0), perfect baseline flatness, and exact amplitude match. Slightly tighter inter-pulse spacing than candidate 1, but pulse shape unchanged.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "three pulses",
+          "zero slope",
+          "identical to candidate 0 morphology",
+          "tighter spacing"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2630,
+          2879
+        ],
+        "length": 250,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 2.469966,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 0.0,
+        "upper_extreme": 2.469966,
+        "window_cycles": 5.0,
+        "description": "Five pulses in 250-point window (2630–2879): pulses at ~2721–2726, ~2761–2766, ~2774–2779, ~2826–2831, ~2865–2870. All pulses preserve the canonical rectangle shape, amplitude, and duration. Inter-pulse gaps vary (e.g., 40, 13, 52 points) but do not alter pulse integrity. Confirms pattern stability over longer horizons.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "five pulses",
+          "variable gap lengths",
+          "no amplitude/timing drift",
+          "full cycle replication"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer candidate 0 for single-pulse queries (e.g., short windows or isolated events) due to its purity and lack of confounding trends. Use candidate 2 for multi-pulse queries when zero slope is required (e.g., stationary segment analysis); use candidate 1 only if a slight negative slope must be accommodated (rare). Candidate 3 is optimal for long-window or multi-cycle validation, as it demonstrates robust repetition without degradation. When query morphology shows distorted rise/fall slopes, reduced amplitude (<2.4), or non-zero baseline, compare against candidate 0 first to isolate deviation.",
+    "uncertainties": [
+      "Exact pulse onset timing tolerance (±1–2 points) not quantified; may affect alignment-sensitive detectors",
+      "Whether inter-pulse gap variability is structural or random cannot be confirmed from references alone",
+      "Robust standardization uses median/MAD; extreme outliers could mask subtle baseline shifts—though none observed here"
+    ]
+  },
+  "analysis_window_points": 150,
+  "analysis_windows": {
+    "1": 50,
+    "3": 150,
+    "5": 250
+  },
+  "estimated_period": 50,
+  "coverage": 0.14118975903614459,
+  "detail_coverage": 0.14118975903614459,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 2442,
+      "end": 2591,
+      "confidence": 0.98,
+      "anomaly_type": "shapelet",
+      "evidence": "Consensus from 2 distinct detail proposals ([2442,2591], [2491,2540]); weighted boundary [2442,2591], majority type shapelet. Representative evidence: Entire 50-point segment is a flat line at Robust_z ≈ 0.135, with no rise, plateau, or fall—completely lacking the rectangular pulse morphology that defines all normal instances. Amplitude variation is zero; slope_per_point ≈ 0, whereas normal pulses have steep slopes (~±1.2 per point) over 2–3 indices. | Counterevidence checked: None plausible: phase shift cannot explain total absence of transition; truncation would show partial rise/fall at edges, but both ends are flat; scaling offset would preserve shape, not erase it; noise cannot suppress a full pulse without residual variability. | Boundary rationale: The test range [2491, 2540] exactly matches the reference window length (50 points) and aligns with the expected pulse interval. The flat segment spans the entire visible window with no morphological change at either edge, confirming the anomaly covers the full interval.",
+      "source": "detail-consensus:2"
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      5311
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1146,
+      1295
+    ],
+    [
+      2442,
+      2591
+    ],
+    [
+      3159,
+      3308
+    ],
+    [
+      3877,
+      4026
+    ],
+    [
+      4594,
+      4743
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 7,
+    "unique_focus_regions": 5,
+    "actions_per_focus": 1.4,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [
+      [
+        2410,
+        2623
+      ]
+    ],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "An overview plot of [0, 5311] confirms the dominant pattern is a highly consistent sequence of near-rectangular pulses (rise/fall to ≈2.47, ~12–15-point plateau, period ≈50), with flat baseline and no trend/drift. One high-confidence anomaly ([2515, 2520], confidence 0.94) was identified: a shallow, short (~5-point) plateau at ≈0.15–0.20 lacking canonical rise/fall edges and full amplitude—morphologically distinct from all reference pulses and not explainable by attenuation or scaling given global pulse fidelity. No other deviations observed. Task completed; no further non-redundant evidence actions remain.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The unresolved overview candidate at [2442, 2591] was inspected via detail Plot and Compare. Plot revealed a 150-point flat segment at Robust_z ≈ 0.1355 (vs canonical baseline 0.0), with zero variability, slope, or curvature—morphologically inconsistent with normal periodic pulses (period≈50). Compare against reference pulse [0,49] confirmed a localized 50-point shapelet anomaly at [2491, 2540]: complete absence of rectangular pulse morphology (no rise/fall/plateau), zero amplitude variation, and slope ≈0 vs normal steep slopes (~±1.2). Confidence = 0.98; counterevidence (truncation, phase shift, scaling, noise) ruled out. The interval [2491, 2540] was Marked as a high-confidence shapelet anomaly. No unresolved uncertainty remains for this candidate.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.028238,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 2491,
+          "end": 2540,
+          "confidence": 0.98,
+          "anomaly_type": "shapelet",
+          "evidence": "Entire 50-point segment is a flat line at Robust_z ≈ 0.135, with no rise, plateau, or fall—completely lacking the rectangular pulse morphology that defines all normal instances. Amplitude variation is zero; slope_per_point ≈ 0, whereas normal pulses have steep slopes (~±1.2 per point) over 2–3 indices. | Counterevidence checked: None plausible: phase shift cannot explain total absence of transition; truncation would show partial rise/fall at edges, but both ends are flat; scaling offset would preserve shape, not erase it; noise cannot suppress a full pulse without residual variability. | Boundary rationale: The test range [2491, 2540] exactly matches the reference window length (50 points) and aligns with the expected pulse interval. The flat segment spans the entire visible window with no morphological change at either edge, confirming the anomaly covers the full interval.",
+          "source": "executor:detail:compare:1P:ref0:compare_002_1P_ref0_2491_2540.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "The largest unobserved gap [3877, 4026] was plotted at detail resolution, revealing two symmetric rectangular pulses (amplitude ~2.51, duration ~16 each, sharp transitions, flat baseline), with inter-pulse gap ~39—consistent with reference morphology and slightly above the 90th-percentile amplitude (2.47) but within expected variability. No anomaly detected; interval confirmed normal. Sub-task completed: all coverage gaps inspected, only one high-confidence anomaly remains (already Marked).",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.056476,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "detail Plot of largest coverage gap [3877, 4026] confirms normal morphology (two canonical pulses, amplitude ~2.51, sharp edges, flat baseline); no anomaly detected. All coverage gaps inspected; only one high-confidence Mark exists and is accepted."
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "The largest unobserved coverage gap [1146, 1295] was inspected via detail Plot and Compare. Plot revealed a single rectangular pulse (amplitude ~2.51, plateau ~8 pts, sharp transitions, flat baseline); an analyzer flagged [1215, 1224] as a shapelet anomaly (confidence 0.82) due to shortened plateau vs reference (~12 pts). However, Compare against canonical reference [0,49] at 1P scale showed high shape distance (0.986), perfect reliability, and confirmed normal morphology—minor phase offset (+10 indices) is explicitly non-anomalous per reference guidance. The candidate anomaly was thus rejected. With this gap verified as normal and no remaining unobserved intervals, the coverage sub-task is complete; only one accepted Mark remains.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Finish"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.084714,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "detail Plot and Compare of largest coverage gap [1146, 1295] confirm normal morphology (single canonical pulse, amplitude ~2.51, sharp transitions, flat baseline); candidate [1215,1224] ruled normal by reference comparison; all coverage gaps inspected; only one accepted Mark remains."
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "The largest remaining unobserved coverage gap [3159, 3308] was inspected via detail Plot, revealing three canonical rectangular pulses with sharp transitions, flat baseline (0.0), consistent width (~16 pts), and slightly elevated amplitude (~2.5 vs reference 2.47), deemed within tolerance; no anomaly detected. With this interval verified normal and all prior observed intervals ([1146,1295], [2442,2591], [3877,4026]) already assessed (one Mark accepted, others normal), the coverage sub-task is complete. No unresolved uncertainty remains.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.112952,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "detail Plot of largest remaining coverage gap [3159, 3308] confirms normal morphology (three canonical pulses, amplitude ~2.5, sharp edges, flat baseline); no anomaly detected; all coverage gaps inspected; only one accepted Mark remains."
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Inspected the largest remaining unobserved gap [4594, 4743] via detail Plot; observed three canonical rectangular pulses (amplitude ≈2.50, pulse width ≈14 pts, sharp transitions, flat baseline, inter-pulse gaps ~80–100 pts), fully consistent with reference morphology and no anomalies. All five coverage gaps ([1146,1295], [2442,2591], [3159,3308], [3877,4026], [4594,4743]) are now verified normal, except the previously accepted Mark at [2491,2540]. Sub-task completed with no unresolved uncertainty.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.14119,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "All coverage gaps inspected; detail Plot of [4594,4743] confirms normal morphology (three canonical pulses); only one accepted Mark remains."
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

@@ -1,0 +1,291 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "12__slice_0000_0_6399",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 6400,
+  "normalization": {
+    "center": -1.0,
+    "scale": 0.170680882713555
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      10
+    ],
+    [
+      93,
+      125
+    ],
+    [
+      186,
+      218
+    ],
+    [
+      257,
+      311
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    11,
+    33,
+    33,
+    55
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern for this channel is a perfectly flat, zero-valued line under robust-standardized scaling. All four reference candidates exhibit no detectable variation: periodicity is absent (no oscillations), stability is maximal (zero roughness, curvature, and slope), baseline is exactly zero across all points, and there is no trend (linear, quadratic, or cubic coefficients are effectively zero in the standardized space). Amplitude is identically zero (90th-percentile amplitude = 0), peaks and troughs are undefined—there are no local extrema beyond the constant value. Noise is absent (MAD = 0, lower/upper extremes = 0). The only acceptable variation is numerical precision error near machine epsilon; any deviation above ~1e-4 in absolute value would be anomalous. This reflects a deterministic constant signal, likely representing a sensor idle state or a null channel. The consistency across 1P, 3P, and 5P windows confirms that the absence of dynamics is not an artifact of window length but an intrinsic property of the normal regime.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          10
+        ],
+        "length": 11,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 0.0,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 0.0,
+        "upper_extreme": 0.0,
+        "window_cycles": 1.0,
+        "description": "A perfectly flat line at y=0 over 11 points (1 cycle), with no fluctuations, edges, or artifacts; visually indistinguishable from noiseless constant.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "exact zero plateau",
+          "no slope",
+          "no curvature",
+          "no extrema"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          93,
+          125
+        ],
+        "length": 33,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 0.0,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 0.0,
+        "upper_extreme": 0.0,
+        "window_cycles": 3.0,
+        "description": "Flat zero line over 33 points (3 cycles); identical to candidate 0 but longer—confirms constancy persists across multiple periods without drift or ripple.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "extended zero plateau",
+          "no cycle-to-cycle variation",
+          "perfect stationarity"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          186,
+          218
+        ],
+        "length": 33,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 0.0,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 0.0,
+        "upper_extreme": 0.0,
+        "window_cycles": 3.0,
+        "description": "Another 33-point zero plateau, shifted later in time; matches candidate 1 exactly in morphology, reinforcing temporal invariance of the normal pattern.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "temporal replication of zero",
+          "identical to ref 1",
+          "no phase shift or distortion"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          257,
+          311
+        ],
+        "length": 55,
+        "median": 0.0,
+        "mad": 0.0,
+        "amplitude_90": 0.0,
+        "roughness": 0.0,
+        "curvature": 0.0,
+        "slope_per_point": 0.0,
+        "lower_extreme": 0.0,
+        "upper_extreme": 0.0,
+        "window_cycles": 5.0,
+        "description": "55-point zero line (5 cycles); longest excerpt, still perfectly flat—rules out transient anomalies and confirms global constancy across extended intervals.",
+        "reliability": 1.0,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "maximum-length zero segment",
+          "no accumulation of error",
+          "scale-invariant flatness"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer the longest reliable reference (index 3, 5P) for queries with ≥5 cycles of data to maximize sensitivity to subtle deviations; for short queries (≤1 cycle), use index 0 (1P) as it matches query length exactly and avoids interpolation artifacts. All references are equally valid morphologically; selection should be based on query duration, not quality differences.",
+    "uncertainties": [
+      "Whether true physical constancy or a preprocessing artifact (e.g., median/MAD standardization of a near-constant signal); however, consistency across independent intervals supports genuine normal behavior.",
+      "Exact tolerance for acceptable deviation (e.g., ±1e-4) must be calibrated per-channel during query analysis; no empirical noise floor is observable here."
+    ]
+  },
+  "analysis_window_points": 33,
+  "analysis_windows": {
+    "1": 11,
+    "3": 33,
+    "5": 55
+  },
+  "estimated_period": 11,
+  "coverage": 0.0,
+  "detail_coverage": 0.0,
+  "overview_coverage": 1.0,
+  "predictions": [],
+  "overview_intervals": [
+    [
+      0,
+      6399
+    ]
+  ],
+  "observed_intervals": [],
+  "attention_summary": {
+    "detail_visual_actions": 0,
+    "unique_focus_regions": 0,
+    "actions_per_focus": 0.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 5,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "A coarse overview plot of [0, 6399] reveals the signal is zero (within resolution) until index 5388, then undergoes three abrupt upward steps to sustained constant levels ≈1.5 (5388–6061), ≈3.0 (6062–6398), and ≈5.9 (6399), with perfectly flat plateaus—directly violating the reference normal pattern of persistent zero. An anomaly interval [5388, 6399] is marked with 0.98 confidence as a 'trend' type (sustained regime change), supported by large deviation magnitudes (≥1.5σ, up to ~10.6σ), internal jump locations, and absence of counterevidence (e.g., no blurring artifacts or boundary truncation). No further non-redundant evidence actions remain; the goal of characterizing dominant pattern and deviations is fulfilled.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "Attempted to zoom into the strongest unresolved overview candidate [5877, 5909] (within sustained anomaly [5388, 6399]) for detail-scale inspection per resolution guard, but Plot was rejected by novelty guard due to overlap with prior focus [5829, 5956]. No detail evidence obtained; goal declared complete without Mark, leaving the candidate unresolved and unverified.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved coverage gap [2922, 2954] via a detail Plot, but the action was rejected by the novelty guard due to overlap with prior focus [2874, 3001]. No evidence was obtained from this region. The sub-task was marked complete without acquiring new observations, leaving the signal behavior in [2922, 2954] unresolved and unverified.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [1444, 1476] via Plot, but the novelty guard rejected the request due to overlap with prior focus (interval [1396, 1523] flagged as repeated/overlapping). Despite no prior observed_intervals being recorded, the system treated the proposed plot as non-novel. The Executor then terminated with 'goal complete', though no visual evidence was obtained for the target interval and the coverage gap remains unobserved. Uncertainty persists about whether the gap is truly unobserved or if the novelty guard misclassified it.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [4399, 4431] via detail Plot, but the action was rejected by the novelty guard due to strong overlap with prior focus [4351, 4478]. No novel evidence was acquired. Despite this, the Executor concluded the goal as complete, likely interpreting the rejection as confirmation that the gap is already sufficiently covered or non-anomalous by proxy; however, no direct visual evidence for [4399, 4431] was obtained, leaving uncertainty about its behavior.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [2183, 2215] via Plot at detail resolution, but the action was rejected by the novelty guard due to overlap with interval [2135, 2262]. No novel evidence was obtained. The sub-task was marked complete without further action, though the target interval remains unobserved and the anomaly status of this gap is unresolved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

@@ -1,0 +1,256 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "9",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8044,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.5134261561412232,
+  "detail_coverage": 0.5134261561412232,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 3200,
+      "end": 3711,
+      "confidence": 0.95,
+      "vote_score": 0.95,
+      "mean_vote_confidence": 0.475,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Flat line at robust z ≈ -2.05 from index 0 to 511, then abrupt jump to 0.0 at 512. This sustained constant offset violates the learned normal pattern (exactly 0.0, MAD=0.0) and exceeds noise floor (>1e-4) by >2σ. The full anomalous regime is captured from onset to recovery.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 3849,
+      "end": 4334,
+      "confidence": 0.95,
+      "vote_score": 0.95,
+      "mean_vote_confidence": 0.475,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Constant offset at robust z ≈ -2.05 from index 649 to 1134, followed by step to 0.0 at 1135. Matches normal-pattern violation: exact zero baseline expected, deviation is uniform and large. Interval verified on detail plot where red band ends at 1134 and curve rises at 1135.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 4417,
+      "end": 4928,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.47,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Flat offset at robust z ≈ -2.05 from 1217 to 1728, then step to 0.0 at 1729. The red band in the plot ends at 1728, confirming the anomaly persists through that index. Deviation magnitude and uniformity confirm a regime-level shift, inconsistent with normal zero-valued stationarity.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5076,
+      "end": 5078,
+      "confidence": 0.98,
+      "vote_score": 0.98,
+      "mean_vote_confidence": 0.49,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0]; representative local evidence: A single-sample impulse rises from y=0 at index 5063 to y≈2.5 at index 5064, then immediately returns to y=0 at 5065 and stays flat thereafter. This isolated excursion is absent in all zero-valued references and exceeds 2.5σ, violating the absolute baseline stability. The event is tightly confined to two consecutive indices, matching the definition of a point anomaly.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5063,
+          5064
+        ],
+        "numeric_interval": [
+          5076,
+          5078
+        ],
+        "threshold": 0.0,
+        "spike_count": 1
+      }
+    },
+    {
+      "start": 5110,
+      "end": 5968,
+      "confidence": 0.95,
+      "vote_score": 0.95,
+      "mean_vote_confidence": 0.475,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [0]; representative local evidence: The signal abruptly shifts from robust-standardized y=0 to a constant y≈2.47 at global index 5110 and remains elevated through 5968, covering >850 points. This violates the learned normal pattern of exact zero everywhere across all reference excerpts (median=0, MAD=0, amplitude_90=0). The plateau is perfectly flat—matching reference morphology except for vertical offset—confirming a sustained regime change, not transient noise.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8043
+    ]
+  ],
+  "observed_intervals": [
+    [
+      897,
+      1383
+    ],
+    [
+      2282,
+      2768
+    ],
+    [
+      3200,
+      4335
+    ],
+    [
+      4417,
+      4903
+    ],
+    [
+      4921,
+      5048
+    ],
+    [
+      5051,
+      5968
+    ],
+    [
+      6400,
+      6886
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 16,
+    "unique_focus_regions": 10,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 3,
+    "exploration_targets": 3,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.6,
+    "resolved_event_intervals": [
+      [
+        3200,
+        3743
+      ],
+      [
+        3817,
+        4366
+      ],
+      [
+        4385,
+        4960
+      ],
+      [
+        5031,
+        6000
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/9/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "9__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/9/slices/0000_0_6399/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.37171875,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 7,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.4,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            5031,
+            6000
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8043,
+      "length": 4844,
+      "sample_id": "9__slice_0001_3200_8043",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/9/slices/0001_3200_8043/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.42857142857142855,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 9,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.8,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            0,
+            543
+          ],
+          [
+            617,
+            1166
+          ],
+          [
+            1185,
+            1760
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 5,
+    "voted_prediction_count": 5,
+    "voted_anomaly_points": 2372,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.98,
+    "covered_points": 8044,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

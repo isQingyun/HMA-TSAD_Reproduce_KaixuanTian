@@ -1,0 +1,386 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "26__slice_0000_0_6399",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 6400,
+  "normalization": {
+    "center": -0.8544682785783251,
+    "scale": 0.11733439254645674
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      97
+    ],
+    [
+      862,
+      1155
+    ],
+    [
+      1724,
+      2017
+    ],
+    [
+      2390,
+      2879
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    98,
+    294,
+    294,
+    490
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern consists of a quasi-periodic sequence of sharp, narrow upward spikes (duration ~5–10 points) followed by rapid decay to near-zero baseline, recurring approximately every 98 points (consistent with estimated period). Each spike reaches robust-standardized values between ~12 and ~19, with 90th-percentile amplitude ~17–19 across candidates. Baseline is stable near zero (median 0.0–0.16), with low roughness (~0.166) and mild curvature (~0.168–0.171), indicating smooth low-frequency drift rather than noise. Slope per point is near-zero (±0.009), confirming absence of strong trend. Peaks are asymmetric: steep rise (~2–3 points), slower fall (~5–8 points); troughs are flat and shallow (near 0), occasionally dipping slightly negative. Noise in baseline segments is low-amplitude (<1) and irregular but non-oscillatory. Acceptable variation includes minor differences in spike height (±1–2 units), exact timing jitter (±2–3 points), and baseline offset (≤0.2), but not sustained elevation, broad plateaus, or extra/missing spikes within a cycle. Boundary truncation is minimal; all candidates show full cycles at interior segments.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          97
+        ],
+        "length": 98,
+        "median": 0.646246,
+        "mad": 1.320737,
+        "amplitude_90": 18.626577,
+        "roughness": 0.16594,
+        "curvature": 0.168616,
+        "slope_per_point": -0.00887386,
+        "lower_extreme": 1.668857,
+        "upper_extreme": 17.868642,
+        "window_cycles": 1.0,
+        "description": "Single-cycle (1P) excerpt showing one complete spike-baseline-spike motif. First spike starts early (~index 5), drops sharply to ~1, then rises again near index 48 before final ascent. Baseline is elevated (~0.6 median) and less flat than others; contains a small secondary bump near index 20. Ends with an incomplete rising edge, suggesting truncation at right boundary.",
+        "reliability": 0.75,
+        "possible_contamination": true,
+        "distinctive_features": [
+          "elevated baseline",
+          "secondary bump",
+          "truncated final spike"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          862,
+          1155
+        ],
+        "length": 294,
+        "median": 0.0,
+        "mad": 0.674491,
+        "amplitude_90": 19.130617,
+        "roughness": 0.165502,
+        "curvature": 0.169498,
+        "slope_per_point": 0.00465397,
+        "lower_extreme": 1.199439,
+        "upper_extreme": 19.688149,
+        "window_cycles": 3.0,
+        "description": "Three-cycle (3P) excerpt with clean, well-separated spikes at indices ~892, 988, 1047. Baseline near zero, very flat between spikes. Spikes are symmetrically sharp, peak ~17–19, decay cleanly. Minimal noise; curvature and roughness match consensus tightly. No visible anomalies or distortions.",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "flat baseline",
+          "clean spike symmetry",
+          "tight periodicity"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1724,
+          2017
+        ],
+        "length": 294,
+        "median": 0.0,
+        "mad": 0.660369,
+        "amplitude_90": 18.841013,
+        "roughness": 0.16594,
+        "curvature": 0.17132,
+        "slope_per_point": -0.00058471,
+        "lower_extreme": 1.378132,
+        "upper_extreme": 19.060885,
+        "window_cycles": 3.0,
+        "description": "Three-cycle (3P) excerpt, visually nearly identical to candidate 1: spikes at ~1728, 1818, 1878; same height (~17–19), shape, and baseline behavior. Slight leftward shift in spike timing vs candidate 1, but within acceptable jitter. Minor baseline dip near index 1790, otherwise pristine.",
+        "reliability": 0.97,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "near-identical to ref 1",
+          "slight timing jitter",
+          "minor baseline dip"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2390,
+          2879
+        ],
+        "length": 490,
+        "median": 0.164174,
+        "mad": 0.667345,
+        "amplitude_90": 17.374473,
+        "roughness": 0.16594,
+        "curvature": 0.167691,
+        "slope_per_point": 0.00620044,
+        "lower_extreme": 1.542306,
+        "upper_extreme": 19.162598,
+        "window_cycles": 5.0,
+        "description": "Five-cycle (5P) excerpt spanning longer duration. Shows five regular spikes (indices ~2467, 2518, 2570, 2621, 2750), consistent height and shape. Baseline slightly elevated (median 0.16) but still flat; last two spikes show minor broadening. One small anomalous ripple near index 2855, but overall highly representative.",
+        "reliability": 0.92,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "5 full cycles",
+          "slight baseline elevation",
+          "minor ripple at end"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer reference 1 or 2 for queries with clean, flat baselines and sharp spikes; use reference 3 when query spans >3 cycles or shows mild baseline offset; avoid reference 0 unless query exhibits elevated baseline and truncated morphology. For queries with ambiguous spike count, align by local period (≈98) rather than absolute index.",
+    "uncertainties": [
+      "Exact spike width tolerance (5–10 pts) not quantified per candidate",
+      "Whether minor baseline dips (e.g., ref 2 index 1790) are normal or incipient anomalies",
+      "Impact of robust-standardization on absolute spike height comparability across candidates"
+    ]
+  },
+  "analysis_window_points": 294,
+  "analysis_windows": {
+    "1": 98,
+    "3": 294,
+    "5": 490
+  },
+  "estimated_period": 98,
+  "coverage": 0.21296875,
+  "detail_coverage": 0.21296875,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 4392,
+      "end": 4498,
+      "confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Consensus from 2 distinct detail proposals ([4392,4408], [4407,4498], [4430,4438]); weighted boundary [4392,4498], majority type shapelet. Representative evidence: The spike centered at ~4397 has a broad, flattened top (duration ~10–12 pts vs normal 5–8 pts), reduced peak sharpness (peak ~12.8 vs normal 17–19), and asymmetric decay with a secondary small hump at ~4403—deviating from the canonical sharp, symmetric, single-peaked motif. Baseline before/after remains near zero, ruling out trend or contamination; the prior two spikes in the same segment are normal, confirming this is a localized morphological defect. | Counterevidence checked: Minor timing jitter or slight amplitude reduction could explain mild broadening, but the plateau top and secondary inflection are not seen in any reliable normal candidate and exceed acceptable variation (±1–2 units height, ±2–3 pts timing). | Boundary rationale: Start at 4392 (rise onset, where curve departs from baseline faster than normal); end at 4408 (final return to baseline after secondary hump). This interval fully encloses the abnormal morphology while excluding adjacent normal spikes and baseline segments. Verified on Panel 1: visible d",
+      "source": "detail-consensus:2"
+    },
+    {
+      "start": 5748,
+      "end": 5820,
+      "confidence": 0.78,
+      "anomaly_type": "contextual",
+      "evidence": "Consensus from 2 distinct detail proposals ([5725,5845], [5748,5762], [5800,5820]); weighted boundary [5748,5820], majority type contextual. Representative evidence: A low-amplitude (~1–2), oscillatory ripple with ~20-point wavelength appears between spikes, where the normal pattern expects flat, near-zero baseline with only irregular low-amplitude noise (<1) and no periodic micro-oscillations. This ripple persists for ~20 points and is visually distinct from baseline roughness in references (e.g., ref 1/2 show MAD ~0.67, roughness ~0.166, no such structure). | Counterevidence checked: Could be downsampling artifact or minor phase jitter in baseline drift; however, the regularity and coherence of the ripple exceed typical noise in reference baselines. | Boundary rationale: The ripple begins clearly at index ~5800 (first upward inflection after flat baseline) and ends at ~5820 (last peak before return to flat baseline near 0); inclusive interval captures full oscillatory event.",
+      "source": "detail-consensus:2"
+    },
+    {
+      "start": 5877,
+      "end": 5900,
+      "confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Consensus from 3 distinct detail proposals ([5872,5900], [5877,5895], [5945,6018]); weighted boundary [5877,5900], majority type shapelet. Representative evidence: Between the spikes at ~5908 and ~5982, the test signal exhibits a prolonged, elevated plateau (robust_z ≈ 0.8–1.2) lasting ~73 points—far longer than the typical flat baseline (<10 pts, robust_z ≈ −0.2 to 0.2) seen in reference 1. This plateau distorts the expected sharp decay-to-baseline motif and introduces low-amplitude oscillatory wobble absent in normals. The next spike (~5982) also rises from this elevated base, altering its effective amplitude and asymmetry relative to reference spikes. | Counterevidence checked: Minor baseline drift (≤0.2) is acceptable per normal pattern, but here the elevation persists >70 pts and exceeds ±0.5 robust_z consistently—beyond acceptable jitter or offset. No truncation or scaling artifact explains the duration or structure. | Boundary rationale: Start at 5945: first sustained upward deviation above 0.5 robust_z after the spike at 5908; end at 6018: last point before the next spike begins rising sharply at ~6020. Verified on Panel 1: visible as a distinct hump between x=5945 and x=60",
+      "source": "detail-consensus:3"
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      6399
+    ]
+  ],
+  "observed_intervals": [
+    [
+      2002,
+      2296
+    ],
+    [
+      3002,
+      3296
+    ],
+    [
+      4251,
+      4545
+    ],
+    [
+      5615,
+      6092
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 9,
+    "unique_focus_regions": 5,
+    "actions_per_focus": 1.8,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 0,
+    "exploration_targets": 0,
+    "resolved_event_intervals": [
+      [
+        4360,
+        4530
+      ],
+      [
+        5716,
+        5932
+      ]
+    ],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "An overview Plot of [0, 6399] revealed a dominant quasi-periodic spike pattern (~98-point period, spikes ~12–19 in robust-standardized units, baseline near zero). Four anomaly intervals were identified with evidence: (1) [2000, 2300], contextual amplitude suppression (spikes 5–8, period intact, neighbors normal; confidence 0.82); (2) [3000, 3300], similar localized attenuation (spikes 4–7; confidence 0.78); (3) [4378, 4420], shapelet anomaly—two spikes merge into a broad, slow-rising/falling plateau (~8 peak, width ~25 pts vs normal 5–10; confidence 0.75); (4) [5725, 5800], frequency anomaly—4 high-amplitude spikes in ~75 pts (period ~19), violating expected spacing (confidence 0.91). All anomalies were validated against counterevidence (e.g., ruled out global scaling, truncation, jitter). No further non-redundant actions remain; sub-goal of characterizing dominant pattern and deviations is complete.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The strongest unresolved overview candidate ([5725, 5800], confidence 0.91) was inspected via detail Plot ([5615, 5908]) and two 3P-scale Compares (refs to index 1), revealing three anomalies: (1) a shapelet at [5872, 5900] (confidence 0.87)—a broad, plateau-topped spike with slow decay and elevated trough—confirmed against reference morphology and marked; (2) a contextual ripple at [5800, 5820] (0.78) and baseline elevation at [5725, 5845] (0.65), both co-occurring and possibly linked; (3) a second shapelet at [5945, 6018] (0.87) in a separate Compare window, showing a prolonged inter-spike plateau. The original frequency-compression hypothesis for [5725, 5800] was not conclusively validated: while 4 spikes occur in ~75 pts, the first two spikes appear normal in timing/shape, suggesting local distortion rather than global period shift. Uncertainty remains on whether the baseline elevation and ripple are independent anomalies or manifestations of a single underlying trend; no Mark was applied to them due to lower confidence and unresolved benignity.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 4,
+      "coverage_after": 0.074688,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 5872,
+          "end": 5900,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "The third spike in the test query (centered ~5885) is markedly broader and asymmetric: rise over ~6 points, plateau-like top lasting ~5 points, and slow decay over ~10 points—unlike the reference’s sharp, narrow spike (rise ~2–3 pts, peak width ≤2 pts, decay ~5–8 pts). Peak amplitude (~14.5) is also lower than typical (17–19), and the post-peak trough does not return cleanly to baseline but remains elevated (~1–2) for ~15 points before resuming low-level noise. This deviates from the normal motif’s steep rise, narrow apex, and rapid return to flat baseline. | Counterevidence checked: Minor timing jitter or slight baseline drift could stretch a spike, but the sustained plateau and elevated trough exceed acceptable variation (baseline offset ≤0.2, spike width ≤10 pts, no prolonged elevation). The first two spikes in the same window remain normal, ruling out global scaling or phase shift. | Boundary rationale: Start at 5872 (onset of abnormal rise, where slope exceeds normal steepness threshold); end at 5900 (return to baseline-like stability after prolonged decay). Verified on Panel 1: visible deviation begins just after tick 5870 and resolves near 5900, well within test_range [5615,",
+          "source": "executor:detail:compare:3P:ref1:compare_003_3P_ref1_5615_5908.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The strongest unresolved overview candidate [2003, 2296] was refined via detail Plot and 3P Compare (vs ref 1). Plot confirmed two high-confidence anomalies: a multi-peak shapelet at [2225, 2236] (confidence 0.87; three fused moderate peaks, baseline not returning to zero, inconsistent with reference morphology or jitter tolerance) and an elevated baseline trend at [2240, 2285] (confidence 0.82; sustained 0.5–1.5 offset >45 pts, violating ≤0.2/≤8-pt norm). Compare revealed additional shapelets at [2036, 2047] (broad hump, conf 0.87) and [2145, 2154] (double-peaked spike, conf 0.79), plus a weaker contextual anomaly at [2220, 2228] (pre-spike bump, conf 0.68). The [2225, 2236] shapelet—most morphologically deviant, unexplained by reference memory—was Marked as a shapelet (conf 0.87). Goal completed: the unresolved candidate is now resolved via Mark; no remaining uncertainty about this interval’s primary anomaly, though secondary anomalies ([2240, 2285], [2036, 2047], [2145, 2154]) remain unmarked and may require follow-up.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.120781,
+      "mark_count_after": 2,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 2225,
+          "end": 2236,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "Instead of one sharp spike (duration ~5–10 pts, peak ≥12), the segment shows three moderate peaks (max ~4.2) over ~12 points, with shallow troughs between them—morphology inconsistent with any reference cycle. Baseline does not drop to near-zero between peaks, violating the rapid-decay expectation. | Counterevidence checked: Could be interpreted as timing jitter causing overlapping spikes—but reference memory allows only ±2–3 point jitter, not 12-point fusion; also, reference cycles never show multi-peak plateaus even under jitter. | Boundary rationale: The anomalous plateau begins at the first rise above baseline (~2225) and ends at the last local maximum before the baseline resumes near-zero (~2236); inclusive coordinates capture the full abnormal motif.",
+          "source": "executor:detail:compare:3P:ref1:compare_005_3P_ref1_2002_2295.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The strongest unresolved overview candidate [3003, 3296] was inspected via detail Plot and 3P Compare against reference 1. Plot revealed two anomalies: (1) a high-confidence shapelet at [3248, 3252] (conf 0.87)—a narrow, low-amplitude (~3.8) spike occurring only ~14 pts after prior spike with elevated baseline (~0.8), violating isolation and amplitude norms; (2) a smaller contextual bump at [3049, 3053] (conf 0.62), possibly benign noise. Compare confirmed a second high-confidence shapelet at [3032, 3042] (conf 0.87): a double-peaked spike (primary z≈13, secondary z≈4.5 during decay), violating the normal single-peak-per-cycle motif and unexplainable by jitter or truncation; this anomaly is more morphologically definitive than the [3248, 3252] event. Per resolution guard, the strongest anomaly [3032, 3042] was Marked as a shapelet. The sub-task is complete; no unresolved uncertainty remains about the candidate’s anomalous nature, though the [3248, 3252] event remains unmarked pending higher-priority decisions.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.166875,
+      "mark_count_after": 3,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 3032,
+          "end": 3042,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "The first spike in the test query (centered ~3035) exhibits a distinct double-peaked morphology: a primary peak at ~3034 (z≈13), followed by a secondary smaller peak at ~3038 (z≈4.5) during the decay phase—where the reference shows a monotonic, clean decay to baseline after the single peak. This violates the normal motif of one sharp upward spike per cycle with rapid unimodal decay. Baseline before/after remains near zero, ruling out trend or contamination. | Counterevidence checked: Phase jitter could shift a neighboring spike into the decay region—but the second peak occurs too early (within 4 points of the main peak) and too low in amplitude to be a full spike; also, the next full spike appears at ~3113, consistent with period ~98, so no extra spike is present in the cycle. | Boundary rationale: Start at 3032 captures the inflection where decay deviates from monotonicity; end at 3042 includes the secondary peak and its return to baseline. Coordinates verified on Panel 1: x-axis ticks at 3002, 3038, 3075, etc.; the secondary peak lies between 3038 and 3042, visually centered at ~3039, so interval [3032, 3042] fully encloses the anomalous subsequence without including adjacent nor",
+          "source": "executor:detail:compare:3P:ref1:compare_007_3P_ref1_3002_3295.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "The strongest unresolved overview candidate [4252, 4545] was inspected via detail Plot and 3P Compare (ref 1). Plot revealed two anomalies: a high-confidence contextual plateau [4407, 4498] (elevated baseline ~0.5–1.0 for ~92 pts, violating rapid decay norm) and a moderate shapelet [4430, 4438] (broad bump, peak ~4.0). Compare refined this, identifying a distinct high-confidence shapelet [4392, 4408] (confidence 0.87): the third spike is broadened (10–12 pts vs normal 5–8), flattened top, reduced peak (~12.8 vs 17–19), asymmetric decay with secondary hump—deviating from canonical sharp, symmetric spikes; prior two spikes in segment are normal, ruling out trend. This shapelet was marked as confirmed anomaly. The plateau [4407, 4498] remains unresolved: it overlaps the marked interval’s tail but was not fully validated by Compare (which focused on spike morphology); its status is uncertain pending further resolution. No other intervals in [4252, 4545] show significant deviation.",
+      "actions": [
+        "Plot",
+        "Compare",
+        "Mark"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.212969,
+      "mark_count_after": 4,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 4392,
+          "end": 4408,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "The spike centered at ~4397 has a broad, flattened top (duration ~10–12 pts vs normal 5–8 pts), reduced peak sharpness (peak ~12.8 vs normal 17–19), and asymmetric decay with a secondary small hump at ~4403—deviating from the canonical sharp, symmetric, single-peaked motif. Baseline before/after remains near zero, ruling out trend or contamination; the prior two spikes in the same segment are normal, confirming this is a localized morphological defect. | Counterevidence checked: Minor timing jitter or slight amplitude reduction could explain mild broadening, but the plateau top and secondary inflection are not seen in any reliable normal candidate and exceed acceptable variation (±1–2 units height, ±2–3 pts timing). | Boundary rationale: Start at 4392 (rise onset, where curve departs from baseline faster than normal); end at 4408 (final return to baseline after secondary hump). This interval fully encloses the abnormal morphology while excluding adjacent normal spikes and baseline segments. Verified on Panel 1: visible deviation begins just after 4390 and resolves by 4410.",
+          "source": "executor:detail:compare:3P:ref1:compare_009_3P_ref1_4251_4544.png:origin=zoom"
+        }
+      }
+    },
+    {
+      "goal": "Mark the strongest unhandled Compare-supported event without another visual call.",
+      "strategy": "mark_candidate",
+      "summary": "The candidate interval [5945, 6018] was marked as a shapelet anomaly (confidence 0.87) based on stored Compare evidence: a prolonged elevated plateau (robust_z ≈ 0.8–1.2, ~73 pts) between spikes at ~5908 and ~5982, deviating from normal baseline (<10 pts, robust_z ≈ −0.2 to 0.2) and introducing oscillatory wobble; the elevation exceeds ±0.5 robust_z persistently, ruling out minor drift or artifacts. Boundaries justified by first sustained deviation above 0.5 robust_z (5945) and last point before next spike rise (~6020). Verified visually in Panel 1 within test range [5799,6092]. No unresolved uncertainty remains; goal completed.",
+      "actions": [
+        "Mark"
+      ],
+      "new_observations": 1,
+      "coverage_after": 0.212969,
+      "mark_count_after": 5,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Mark",
+        "state_action": "added",
+        "mark": {
+          "start": 5945,
+          "end": 6018,
+          "confidence": 0.87,
+          "anomaly_type": "shapelet",
+          "evidence": "Between the spikes at ~5908 and ~5982, the test signal exhibits a prolonged, elevated plateau (robust_z ≈ 0.8–1.2) lasting ~73 points—far longer than the typical flat baseline (<10 pts, robust_z ≈ −0.2 to 0.2) seen in reference 1. This plateau distorts the expected sharp decay-to-baseline motif and introduces low-amplitude oscillatory wobble absent in normals. The next spike (~5982) also rises from this elevated base, altering its effective amplitude and asymmetry relative to reference spikes. | Counterevidence checked: Minor baseline drift (≤0.2) is acceptable per normal pattern, but here the elevation persists >70 pts and exceeds ±0.5 robust_z consistently—beyond acceptable jitter or offset. No truncation or scaling artifact explains the duration or structure. | Boundary rationale: Start at 5945: first sustained upward deviation above 0.5 robust_z after the spike at 5908; end at 6018: last point before the next spike begins rising sharply at ~6020. Verified on Panel 1: visible as a distinct hump between x=5945 and x=6018, well within the 3P test range [5799,6092].",
+          "source": "executor:detail:compare:3P:ref1:compare_002_3P_ref1_5799_6092.png:origin=zoom"
+        }
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

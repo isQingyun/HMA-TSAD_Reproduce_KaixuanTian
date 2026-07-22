@@ -1,0 +1,195 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "1",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 7914,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.1443012383118524,
+  "detail_coverage": 0.1443012383118524,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 2131,
+      "end": 2144,
+      "confidence": 0.85,
+      "vote_score": 0.85,
+      "mean_vote_confidence": 0.85,
+      "anomaly_type": "frequency",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Sustained high-frequency oscillation (~14 points, ≥10 zero-crossings) replaces the expected flat trough (~−0.6, ~25 pts); cadence ~10× faster than normal period (83 pts). No reference (including 5P ref 3) shows such dense, regular jitter—only sparse micro-spikes ≤3 pts. Morphology violates the learned quasi-periodic square-wave constraint.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          2136,
+          2149
+        ],
+        "numeric_interval": [
+          2131,
+          2144
+        ],
+        "threshold": 0.706509,
+        "spike_count": 8
+      }
+    },
+    {
+      "start": 4463,
+      "end": 4465,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.46,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Isolated positive impulse (+1.7) sharply deviates from normal pattern, which permits only shallow peaks (<0.3) and no positive spikes beyond rare ramps ≤+1.0; the event is confined to 3 points with clean edges, matching point-anomaly definition.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          4464,
+          4466
+        ],
+        "numeric_interval": [
+          4463,
+          4465
+        ],
+        "threshold": 0.706509,
+        "spike_count": 1
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      7913
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1980,
+      2266
+    ],
+    [
+      4209,
+      4614
+    ],
+    [
+      6087,
+      6535
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 10,
+    "unique_focus_regions": 5,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 2,
+    "exploration_targets": 2,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.0,
+    "resolved_event_intervals": [
+      [
+        2104,
+        2181
+      ],
+      [
+        4432,
+        4498
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/1/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "1__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/1/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.10828125,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 5,
+        "unique_focus_regions": 2,
+        "actions_per_focus": 2.5,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            2104,
+            2181
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 7913,
+      "length": 4714,
+      "sample_id": "1__slice_0001_3200_7913",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/1/slices/0001_3200_7913/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.15231226134917267,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 5,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 1.666667,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            1232,
+            1298
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 2,
+    "voted_prediction_count": 2,
+    "voted_anomaly_points": 17,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.92,
+    "covered_points": 7914,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

@@ -1,0 +1,230 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "26",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8640,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.23668981481481483,
+  "detail_coverage": 0.23668981481481483,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 4392,
+      "end": 4498,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.435,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Consensus from 2 distinct detail proposals ([4392,4408], [4407,4498], [4430,4438]); weighted boundary [4392,4498], majority type shapelet. Representative evidence: The spike centered at ~4397 has a broad, flattened top (duration ~10–12 pts vs normal 5–8 pts), reduced peak sharpness (peak ~12.8 vs normal 17–19), and asymmetric decay with a secondary small hump at ~4403—deviating from the canonical sharp, symmetric, single-peaked motif. Baseline before/after remains near zero, ruling out trend or contamination; the prior two spikes in the same segment are normal, confirming this is a localized morphological defect. | Counterevidence checked: Minor timing jitter or slight amplitude reduction could explain mild broadening, but the plateau top and secondary inflection are not seen in any reliable normal candidate and exceed acceptable variation (±1–2 units height, ±2–3 pts timing). | Boundary rationale: Start at 4392 (rise onset, where curve departs from baseline faster than normal); end at 4408 (final return to baseline after secondary hump). This interval fully encloses the abnormal morphology while excluding adjacent normal spikes and baseline segments. Verified on Panel 1: visible d",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5633,
+      "end": 5926,
+      "confidence": 1.0,
+      "vote_score": 1.75,
+      "mean_vote_confidence": 0.572347,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0, 1]; representative local evidence: Consensus from 2 distinct detail proposals ([2433,2726], [2440,2455], [2538,2552], [2584,2598]); weighted boundary [2433,2726], majority type shapelet. Representative evidence: First pulse (centered ~2445) has peak ~10.5 (vs normal 15–19), rise duration ~8 points (vs normal 2–4), and a rounded, sluggish ascent instead of near-vertical; trough stays at ~1.5 (vs normal ~0), indicating incomplete reset. Morphology deviates structurally—not just scaled down—from the normal motif. | Counterevidence checked: Could be a phase-shifted normal pulse if baseline were elevated, but reference 2 shows baseline near 0 and no such elevation; test baseline is also near 0 outside pulses, ruling out global offset. | Boundary rationale: Pulse begins rising at ~2440 (from baseline ~0), peaks at ~2445, and returns to baseline by ~2455—coordinates estimated from x-tick interpolation between 2432 and 2468 (each major tick = 16 points); visible inflection points confirm this span.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0,
+        1
+      ],
+      "supporting_prediction_count": 3
+    },
+    {
+      "start": 7931,
+      "end": 7948,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Consensus from 2 distinct detail proposals ([4731,4740], [4732,4748]); weighted boundary [4731,4748], majority type shapelet. Representative evidence: Pulse centered at ~4734 shows two distinct pre-peak oscillations (local maxima at ~4732 and ~4734, values ~3.5 and ~4.2) before the main rise, and a secondary bump (~5.8) during descent—none present in any reference cycle, which have smooth, monotonic rise/fall without substructure. | Counterevidence checked: Could be attributed to high-frequency noise叠加 on a normal pulse; however, the oscillations are coherent, reproducible across ~9 pts, and exceed typical baseline jaggedness (MAD ~0.67), making pure noise unlikely. | Boundary rationale: Start at 4731 captures the onset of the first pre-peak ripple; end at 4740 includes the secondary post-peak bump before baseline re-stabilizes near zero at 4741. This interval fully encloses the anomalous morphological deviation.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 8346,
+      "end": 8639,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Consensus from 2 distinct detail proposals ([5146,5439], [5298,5304]); weighted boundary [5146,5439], majority type shapelet. Representative evidence: All five pulses exhibit uniformly reduced peak amplitude (12–14 vs expected 17–19) while preserving exact morphology, timing, and baseline—indicating a global scaling/shaping deviation rather than point outliers or frequency shift. | Counterevidence checked: Could be misinterpreted as normal amplitude variation if reference amplitude spread were wider; however, reference amplitude_90 is tightly clustered (17.4–19.1) with MAD < 0.8, and no reference cycle falls below 17.0. Also, no local trend or drift explains uniform attenuation across all pulses. | Boundary rationale: The anomaly spans the entire visible interval because every pulse in [5146,5439] shares the same attenuated morphology; excluding any pulse would omit part of the coherent anomalous regime. The left edge (5146) captures the onset of the first attenuated pulse; the right edge (5439) is the plot limit, and the rising tail at 5435–5439 belongs to the fifth pulse’s recovery—not a new event.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8639
+    ]
+  ],
+  "observed_intervals": [
+    [
+      2002,
+      2296
+    ],
+    [
+      3002,
+      3296
+    ],
+    [
+      4251,
+      4545
+    ],
+    [
+      5615,
+      6092
+    ],
+    [
+      7826,
+      8212
+    ],
+    [
+      8345,
+      8639
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 15,
+    "unique_focus_regions": 8,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 0,
+    "exploration_targets": 0,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.875,
+    "resolved_event_intervals": [
+      [
+        4360,
+        4530
+      ],
+      [
+        5601,
+        5958
+      ],
+      [
+        7899,
+        7980
+      ],
+      [
+        8314,
+        8639
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/26/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "26__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/26/slices/0000_0_6399/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.21296875,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 9,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.8,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            4360,
+            4530
+          ],
+          [
+            5716,
+            5932
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8639,
+      "length": 5440,
+      "sample_id": "26__slice_0001_3200_8639",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/26/slices/0001_3200_8639/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.17959558823529412,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            2401,
+            2758
+          ],
+          [
+            4699,
+            4780
+          ],
+          [
+            5114,
+            5439
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 6,
+    "voted_prediction_count": 4,
+    "voted_anomaly_points": 713,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.75,
+    "covered_points": 8640,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

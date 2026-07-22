@@ -1,0 +1,239 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "3",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8080,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.24232673267326732,
+  "detail_coverage": 0.24232673267326732,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 1198,
+      "end": 1202,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.87,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Isolated narrow spike (+1.6) mid-descent, width <5 pts, no preceding rise or shoulder; absent in all reference cycles.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 1228,
+      "end": 1267,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Cycle lacks sharp peak, post-peak notch, and steep descent; exhibits broad plateau and shallow trough—deviates from invariant asymmetric waveform morphology across all references.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 3448,
+      "end": 3451,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.47,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Isolated negative spike at index 249 (z≈−2.3) exceeds deepest reference trough (−1.4 in ref 1) by >1 robust-std unit; occurs mid-cycle, not aligned with expected trough; rapid recovery within 3 points; no reference exhibits such depth or isolation.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 3532,
+      "end": 3539,
+      "confidence": 0.82,
+      "vote_score": 0.82,
+      "mean_vote_confidence": 0.41,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: 8-point exact plateau at −0.75 (indices 332–339) with zero local slope and curvature, occurring during expected rising edge of trough where positive slope is required; violates universal nonzero curvature in references (0.337–0.670).",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 7298,
+      "end": 7315,
+      "confidence": 0.82,
+      "vote_score": 0.82,
+      "mean_vote_confidence": 0.82,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Flat-bottomed trough (18 pts, min z≈−1.6) with near-zero slope over 8+ points violates learned normal trough morphology (always gently sloping, curvature ≥0.337); adjacent cycles retain canonical peak→trough asymmetry, confirming local motif distortion.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8079
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1103,
+      1416
+    ],
+    [
+      2859,
+      3214
+    ],
+    [
+      3313,
+      3692
+    ],
+    [
+      4574,
+      4846
+    ],
+    [
+      5295,
+      5648
+    ],
+    [
+      7171,
+      7451
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 14,
+    "unique_focus_regions": 6,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 0,
+    "novelty_redirects": 2,
+    "exploration_targets": 2,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.333333,
+    "resolved_event_intervals": [
+      [
+        1166,
+        1299
+      ],
+      [
+        3416,
+        3483
+      ],
+      [
+        3500,
+        3571
+      ],
+      [
+        7266,
+        7347
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/3/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "3__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/3/slices/0000_0_6399/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.14734375,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            1166,
+            1299
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8079,
+      "length": 4880,
+      "sample_id": "3__slice_0001_3200_8079",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/3/slices/0001_3200_8079/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.20799180327868852,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 2.666667,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            216,
+            283
+          ],
+          [
+            300,
+            371
+          ],
+          [
+            4066,
+            4147
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 5,
+    "voted_prediction_count": 5,
+    "voted_anomaly_points": 75,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.94,
+    "covered_points": 8080,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "16",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8473,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.6749675439631772,
+  "detail_coverage": 0.6749675439631772,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 4183,
+      "end": 4537,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.46,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Consensus from 2 distinct detail proposals ([4183,4537], [4197,4346]); weighted boundary [4183,4537], majority type shapelet. Representative evidence: Test sequence contains two distinct upward steps (first at ~4183, second at ~4537) within one 5-cycle window, whereas all reliable references—including the strongest exemplar (ref 3)—show exactly one step near index 3711 + 944/3 ≈ 4026. The double-step morphology deviates fundamentally from the learned piecewise-constant single-step motif. Counterevidence checked: Phase shift alone cannot explain two steps; even with ±2-point timing tolerance, no normal candidate shows >1 step. Baseline level progression across candidates does not produce internal multiple steps. Boundary rationale: Start at 4183 captures the exact onset of the first vertical rise (z≈0.5→0.68); End at 4537 captures the completion of the second rise (z≈0.85→1.0), after which the signal holds flat—fully enclosing the anomalous subsequence replacing the expected single-step motif.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5837,
+      "end": 8472,
+      "confidence": 0.98,
+      "vote_score": 0.98,
+      "mean_vote_confidence": 0.875345,
+      "anomaly_type": "trend",
+      "evidence": "Global window vote from slices [1]; representative local evidence: The signal exhibits a sustained, non-flat upward slope (~0.00038 per point) from index 2637 to 5272, replacing the expected piecewise-constant baseline with long flat plateaus and rare large steps. Reference segments show zero roughness, zero curvature, and slope_per_point ≤0.0012 only over flat intervals—not during rising phases. Here, no flat interval exists within the entire 2636-point span, violating the core normal invariant.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8472
+    ]
+  ],
+  "observed_intervals": [
+    [
+      389,
+      955
+    ],
+    [
+      1400,
+      1966
+    ],
+    [
+      2410,
+      2976
+    ],
+    [
+      3711,
+      4655
+    ],
+    [
+      5400,
+      8472
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 16,
+    "unique_focus_regions": 10,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 1,
+    "novelty_redirects": 0,
+    "exploration_targets": 0,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.6,
+    "resolved_event_intervals": [
+      [
+        4151,
+        4569
+      ],
+      [
+        5805,
+        8472
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/16/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "16__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/16/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.56109375,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.6,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 1,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            4151,
+            4569
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8472,
+      "length": 5273,
+      "sample_id": "16__slice_0001_3200_8472",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/16/slices/0001_3200_8472/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.582780201024085,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.6,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [
+          [
+            2605,
+            5272
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 2,
+    "voted_prediction_count": 2,
+    "voted_anomaly_points": 2991,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.98,
+    "covered_points": 8473,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

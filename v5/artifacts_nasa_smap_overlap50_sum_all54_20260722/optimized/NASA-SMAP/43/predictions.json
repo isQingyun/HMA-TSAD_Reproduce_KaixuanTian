@@ -1,0 +1,215 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "43",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8029,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.270145721758625,
+  "detail_coverage": 0.270145721758625,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 3666,
+      "end": 3728,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.47,
+      "anomaly_type": "frequency",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Five sharp downward steps occur within 62 points (spacing ~12–13), violating the learned normal periodicity of ~80 points (refs 2/3); amplitude reduced to ~-7.1 vs canonical -11.36; morphology otherwise matches normal steps, confirming cadence—not shape or level—is the deviation.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 5160,
+      "end": 5169,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.435,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: The step centered at ~5165 has depth ~-12.5 (>10% deeper than reference max -11.36), width ~3 points (vs ≤2 in refs), and asymmetric/slow recovery—breaking the uniform sharp-onset/flat-bottom/sharp-recovery motif defining normal steps.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 7596,
+      "end": 7659,
+      "confidence": 0.94,
+      "vote_score": 0.94,
+      "mean_vote_confidence": 0.94,
+      "anomaly_type": "frequency",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Five shallow (~−5.8), wide (10–12 pt), rectangular dips occur every ~12 points over 64 points—radically higher event density and different morphology than the learned normal motif (1–3 narrow, deep ≈−11.4, symmetric spikes per 240-point window, period ~80). Reference 2 and 3 confirm canonical spacing and shape; this burst violates both cadence and shape expectations decisively.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8028
+    ]
+  ],
+  "observed_intervals": [
+    [
+      700,
+      940
+    ],
+    [
+      1673,
+      1913
+    ],
+    [
+      3589,
+      3829
+    ],
+    [
+      4073,
+      4313
+    ],
+    [
+      4930,
+      5170
+    ],
+    [
+      5188,
+      5428
+    ],
+    [
+      6303,
+      6543
+    ],
+    [
+      6860,
+      7100
+    ],
+    [
+      7419,
+      7659
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 18,
+    "unique_focus_regions": 9,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 2,
+    "novelty_redirects": 5,
+    "exploration_targets": 5,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.0,
+    "resolved_event_intervals": [
+      [
+        3634,
+        3760
+      ],
+      [
+        5128,
+        5201
+      ],
+      [
+        7564,
+        7691
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/43/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "43__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/43/slices/0000_0_6399/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.150625,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 1,
+        "exploration_targets": 1,
+        "resolved_event_intervals": [
+          [
+            3634,
+            3760
+          ],
+          [
+            5128,
+            5201
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8028,
+      "length": 4829,
+      "sample_id": "43__slice_0001_3200_8028",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/43/slices/0001_3200_8028/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.24953406502381445,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 10,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 4,
+        "exploration_targets": 4,
+        "resolved_event_intervals": [
+          [
+            4364,
+            4491
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 3,
+    "voted_prediction_count": 3,
+    "voted_anomaly_points": 137,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.94,
+    "covered_points": 8029,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

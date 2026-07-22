@@ -1,0 +1,337 @@
+{
+  "schema_version": 2,
+  "dataset": "UCR",
+  "sample_id": "135",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 6301,
+  "normalization": {
+    "center": 0.2179625824480867,
+    "scale": 0.1979970576792572
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      182
+    ],
+    [
+      217,
+      765
+    ],
+    [
+      434,
+      982
+    ],
+    [
+      285,
+      1199
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    183,
+    549,
+    549,
+    915
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The time series exhibits a highly regular, quasi-sinusoidal oscillation with a robust period of ~183 points (matching the estimated period). Each cycle consists of a sharp, near-symmetric rise from a trough near -1.0 to a peak near +4.0–4.2, followed by a slower, slightly asymmetric decay back to the trough. The baseline (median) is stable near 0.0–0.3 across candidates, with minimal long-term drift; slope_per_point values are small (<±0.001), confirming near-stationarity. Amplitude (90th percentile range) is consistently ~4.6–4.8 robust standardized units. Peaks are smooth, rounded, and tightly clustered in height (~4.0–4.3); troughs are sharper and more uniform near -1.0. Noise is low: roughness (~0.032) and curvature (~0.015) are stable across candidates, indicating consistent smoothness and gentle curvature. Minor morphological variations exist—e.g., slight asymmetry in decay slope or peak rounding—but all candidates share the core motif: three full cycles in ~549 points, five in ~915, and one in 183. Boundary truncation is minimal; all windows capture complete cycles without abrupt cutoffs at edges. Acceptable variation includes ±0.1 in median, ±0.1 in MAD, ±0.15 in amplitude_90, and minor shifts in peak/trough timing (<5 pts).",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          182
+        ],
+        "length": 183,
+        "median": -0.22745,
+        "mad": 0.622104,
+        "amplitude_90": 4.057464,
+        "roughness": 0.032961,
+        "curvature": 0.013097,
+        "slope_per_point": 0.00025426,
+        "lower_extreme": 0.834272,
+        "upper_extreme": 3.439247,
+        "window_cycles": 1.0,
+        "description": "Single-cycle excerpt (183 pts) showing one full oscillation: shallow descent to trough near index 80, then steep rise to peak near index 134, followed by gradual decay. Baseline centered near -0.2; peak ~3.2, trough ~-1.0. Low noise, clean morphology, no visible contamination.",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "single-cycle completeness",
+          "low baseline offset",
+          "symmetric rise/decay within one period"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          217,
+          765
+        ],
+        "length": 549,
+        "median": 0.22483,
+        "mad": 0.814191,
+        "amplitude_90": 4.673498,
+        "roughness": 0.031869,
+        "curvature": 0.015718,
+        "slope_per_point": 0.00098306,
+        "lower_extreme": 1.205788,
+        "upper_extreme": 4.182719,
+        "window_cycles": 3.0,
+        "description": "Three-cycle excerpt (549 pts) with clear repetition: peaks at ~305, 490, 678 (global indices); troughs near 274, 447, 620. Slight upward trend in baseline (slope ~0.001), but morphology identical across cycles. Peak heights ~4.0–4.2, troughs ~-1.0. Very stable rhythm and shape.",
+        "reliability": 0.99,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "three identical cycles",
+          "consistent peak height",
+          "minimal intra-cycle distortion"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          434,
+          982
+        ],
+        "length": 549,
+        "median": 0.28202,
+        "mad": 0.729935,
+        "amplitude_90": 4.781766,
+        "roughness": 0.032961,
+        "curvature": 0.014843,
+        "slope_per_point": 0.00031946,
+        "lower_extreme": 1.165188,
+        "upper_extreme": 4.125529,
+        "window_cycles": 3.0,
+        "description": "Another three-cycle excerpt (549 pts), shifted later in time. Peaks at ~491, 665, 866; troughs near 462, 635, 808. Nearly identical to candidate 1 in shape, amplitude, and timing; median slightly higher (+0.28 vs +0.22), but within acceptable variation. No anomalies detected.",
+        "reliability": 0.99,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "mirror of candidate 1 in temporal position",
+          "identical cycle morphology",
+          "stable curvature"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          285,
+          1199
+        ],
+        "length": 915,
+        "median": 0.14101,
+        "mad": 0.748707,
+        "amplitude_90": 4.654246,
+        "roughness": 0.032306,
+        "curvature": 0.01528,
+        "slope_per_point": -0.00067825,
+        "lower_extreme": 1.18658,
+        "upper_extreme": 4.266539,
+        "window_cycles": 5.0,
+        "description": "Five-cycle excerpt (915 pts) spanning longer horizon. Shows five clean repetitions with consistent period. Minor negative slope (-0.00068) causes slight baseline tilt, but cycle shapes remain intact. Final cycle ends near trough, suggesting full coverage. Peak heights vary <0.2 across cycles; noise remains low. Slight edge truncation at start/end is negligible.",
+        "reliability": 0.97,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "five-cycle continuity",
+          "gentle global tilt compensated locally",
+          "robust periodicity over long span"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer candidate 1 or 2 for query windows of ~3 cycles (549 pts) due to highest reliability and clearest motif replication. Use candidate 0 for single-cycle queries (≤200 pts) as it isolates the fundamental unit without superposition. Candidate 3 is best for long queries (>700 pts) where multi-cycle consistency matters; its slight tilt is acceptable if query shows similar slow drift. Avoid using candidate 0 alone for multi-cycle inference—always cross-validate against 1/2 for phase alignment.",
+    "uncertainties": [
+      "Exact peak/trough timing may shift ±3–5 points between cycles without indicating anomaly",
+      "Baseline median could drift up to ±0.3 over >1000 points without violating normality",
+      "Whether the slight decay asymmetry is intrinsic or noise-induced remains ambiguous",
+      "No ground-truth labels prevent confirmation of whether very rare micro-peaks (e.g., at index 285 in cand.3) are normal variants or subtle anomalies"
+    ]
+  },
+  "analysis_window_points": 549,
+  "analysis_windows": {
+    "1": 183,
+    "3": 549,
+    "5": 915
+  },
+  "estimated_period": 183,
+  "coverage": 0.09458816060942707,
+  "detail_coverage": 0.09458816060942707,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 2985,
+      "end": 3010,
+      "confidence": 0.94,
+      "anomaly_type": "shapelet",
+      "evidence": "Localized high-frequency oscillatory burst (5–6 zero-crossings in 25 pts) replaces the expected smooth, convex decay phase of a normal cycle; curvature and roughness spike sharply while amplitude remains normal (~3.4), violating the learned motif of gentle monotonic decay seen in all references.",
+      "source": "multi-scale-reflection"
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      6300
+    ]
+  ],
+  "observed_intervals": [
+    [
+      2610,
+      3205
+    ]
+  ],
+  "subtask_history": [
+    {
+      "goal": "Inspect the global overview, establish the dominant pattern, and identify candidate deviations.",
+      "strategy": "overview",
+      "summary": "The global overview (Plot [0,6300]) revealed a highly regular quasi-sinusoidal pattern (period ~183, peaks ~3.8–4.0, troughs ~−1.0) but flagged a candidate frequency anomaly at [2865,2910] with double-peaked structure (~2878 and ~2888), shallow trough (~−0.6), and elevated baseline (~+0.5). Detail plots ([2823,2950] and [2821,2948]) contradicted the double-peak interpretation: instead, they showed a prolonged flat-to-declining segment (2821–2914) followed by an accelerating positive trend (2912–2950, slope up to ~0.25/pt), violating normal slope bounds (<±0.001) and cyclicity—leading to a high-confidence trend anomaly at [2912,2950] (confidence 0.96). A subsequent Compare against reference index 1 at 3-cycle scale unexpectedly identified a *different* anomaly at [2985,3010]: a localized high-frequency shapelet burst during decay phase (5–6 zero-crossings in 25 pts), absent in references. This suggests the initial candidate interval [2865,2910] may be part of a broader non-stationary transition zone, and the true anomalies are two distinct events: (1) a trend onset at ~2912, and (2) a shapelet burst at ~2985–3010. Uncertainty remains about whether the flat segment (2821–2914) is anomalous due to missing oscillation or contextually normal; no evidence supports the original double-peak hypothesis after detail inspection.",
+      "actions": [
+        "Plot",
+        "Plot",
+        "Plot",
+        "Compare"
+      ],
+      "new_observations": 4,
+      "coverage_after": 0.087129,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Compare",
+        "requested_interval": [
+          2821,
+          2948
+        ],
+        "interval": [
+          2610,
+          3158
+        ],
+        "query_intervals": [
+          [
+            2793,
+            2975
+          ],
+          [
+            2610,
+            3158
+          ],
+          [
+            2610,
+            3158
+          ],
+          [
+            2427,
+            3341
+          ]
+        ],
+        "selected_scale_cycles": 3.0,
+        "reference_interval": [
+          217,
+          765
+        ],
+        "reference_index": 1,
+        "reference_selection": {
+          "mode": "model-multiscale",
+          "requested_index": -1,
+          "fallback_scale_cycles": 3.0,
+          "scale_scores": [
+            {
+              "window_cycles": 1.0,
+              "best_reference_index": 0,
+              "nearest_normal_distance": 1.55562,
+              "reference_reliability": 0.98,
+              "scale_deviation_score": 1.524508
+            },
+            {
+              "window_cycles": 3.0,
+              "best_reference_index": 1,
+              "nearest_normal_distance": 2.184102,
+              "reference_reliability": 0.99,
+              "scale_deviation_score": 2.162261
+            },
+            {
+              "window_cycles": 5.0,
+              "best_reference_index": 3,
+              "nearest_normal_distance": 1.874597,
+              "reference_reliability": 0.97,
+              "scale_deviation_score": 1.818359
+            }
+          ],
+          "reference_scores": [
+            {
+              "reference_index": 0,
+              "window_cycles": 1.0,
+              "shape_distance": 1.55562,
+              "reliability": 0.98,
+              "match_score": 1.56062,
+              "scale_deviation_score": 1.524508
+            },
+            {
+              "reference_index": 1,
+              "window_cycles": 3.0,
+              "shape_distance": 2.184102,
+              "reliability": 0.99,
+              "match_score": 2.186602,
+              "scale_deviation_score": 2.162261
+            },
+            {
+              "reference_index": 2,
+              "window_cycles": 3.0,
+              "shape_distance": 2.342404,
+              "reliability": 0.99,
+              "match_score": 2.344904,
+              "scale_deviation_score": 2.31898
+            },
+            {
+              "reference_index": 3,
+              "window_cycles": 5.0,
+              "shape_distance": 1.874597,
+              "reliability": 0.97,
+              "match_score": 1.882097,
+              "scale_deviation_score": 1.818359
+            }
+          ],
+          "model_selected_scale_cycles": 3.0,
+          "selected_scale_cycles": 3.0,
+          "model_selected_reference_index": 1,
+          "selected_index": 1
+        },
+        "description": "The 3P scale is optimal because it fully contains the anomalous high-frequency burst (≈2985–3010) within a single cycle’s context, allowing direct comparison against two highly reliable, morphology-identical 3-cycle references. The burst violates the core normal motif—smooth, low-roughness rise/decay—without plausible benign explanation (e.g., phase shift, scaling, or truncation). The 1P scale misses the burst entirely (it lies outside [2793,2975]), and 5P overextends, reducing resolution and confidence.",
+        "anomalies": [
+          {
+            "start": 2985,
+            "end": 3010,
+            "confidence": 0.94,
+            "anomaly_type": "shapelet",
+            "evidence": "A localized high-frequency oscillatory burst (≈5–6 rapid zero-crossings over 25 points) appears during the decay phase of the middle cycle (~2950–3020), replacing the expected smooth, monotonic decay seen in all references. Peak amplitude remains normal (~3.4), but morphology is radically altered: curvature spikes, roughness increases sharply, and the subsequence lacks the characteristic gentle convex decay of normal cycles. | Counterevidence checked: Could be interpreted as transient noise or downsampling artifact—but references show no comparable high-frequency content even at same resolution, and the burst is coherent, structured, and repeats across adjacent samples, ruling out random raster noise. | Boundary rationale: The burst begins visibly at index 2985 where the curve deviates from smooth decay into rapid zigzags, and ends at 3010 where it re-enters a clean monotonic descent toward the next trough. Both endpoints are clear inflection points on the plot; the interval [2985,3010] fully encloses the anomalous shapelet without including adjacent normal segments.",
+            "source": "detail:compare:3P:ref1:compare_003_3P_ref1_2610_3158.png"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Compare the detailed candidate with the automatically best-matching learned reference.",
+      "strategy": "compare",
+      "summary": "The strongest detail candidate, a shapelet anomaly at [2995, 3008], was verified via Compare against the best-matching learned reference (index 1, 3-cycle scale) over interval [2657, 3205]. Evidence shows a localized multi-peaked oscillation (5–6 zero-crossings over ~13 points) during the normally smooth, low-roughness decay phase after the second peak (~2931), with local roughness >0.12 vs typical ~0.032 and erratic curvature—morphologically inconsistent with all high-reliability references. The deviation is not explainable by noise, sampling artifacts, or boundary effects; confidence is 0.94. The anomaly was marked and reaffirmed as decisive; sub-task goal completed with no unresolved uncertainty.",
+      "actions": [
+        "Compare",
+        "Mark",
+        "Finish"
+      ],
+      "new_observations": 3,
+      "coverage_after": 0.094588,
+      "mark_count_after": 1,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "The shapelet anomaly at [2995, 3008] has been rigorously verified via Compare against the highest-reliability reference (ref 1, 3-cycle scale), showing clear morphological violation (high roughness, erratic curvature, multi-peaked structure during expected smooth decay) with no plausible normal explanation. The mark is evidence-backed, detail-confirmed, and decisive (confidence 0.94). No further actions are required for this sub-goal."
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

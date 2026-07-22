@@ -1,0 +1,247 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "30",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8294,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.25126597540390644,
+  "detail_coverage": 0.25126597540390644,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 4305,
+      "end": 4320,
+      "confidence": 0.85,
+      "vote_score": 0.85,
+      "mean_vote_confidence": 0.425,
+      "anomaly_type": "frequency",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Pulse 3 begins at 1056, only 1 point after pulse 2 ends (~1055), compressing the inter-pulse interval from expected ~65 to ~1. This increases local event density; subsequent gap to pulse 4 is 76, indicating compensatory delay. Pulse shape remains normal, confirming frequency-type deviation (altered timing density), not shapelet or point.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          4256,
+          4340
+        ],
+        "numeric_interval": [
+          4305,
+          4320
+        ],
+        "threshold": 2.469966,
+        "spike_count": 2
+      }
+    },
+    {
+      "start": 5610,
+      "end": 5638,
+      "confidence": 1.0,
+      "vote_score": 1.9,
+      "mean_vote_confidence": 0.95,
+      "anomaly_type": "point",
+      "evidence": "Global window vote from slices [0, 1]; representative local evidence: A single-sample impulse at index 5616 reaches ~4.95, exceeding the learned normal upper extreme of 2.47 by >100%. The surrounding pulse (5608–5624) is otherwise identical to reference morphology: flat baseline at 0.0, flat top at 2.47, crisp vertical edges, correct width. This is a globally extreme outlier confined to two points (rise at 5615, peak at 5616).",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0,
+        1
+      ],
+      "supporting_prediction_count": 2,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          5615,
+          5616
+        ],
+        "numeric_interval": [
+          5610,
+          5638
+        ],
+        "threshold": 2.469966,
+        "spike_count": 5
+      }
+    },
+    {
+      "start": 6922,
+      "end": 6938,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.87,
+      "anomaly_type": "frequency",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Four complete pulses occur in 201 points (period ≈50.25), versus learned period 98. Plateau duration ~15 pts (vs normal ~33), inter-pulse gaps ~31 pts (vs normal ~65). Amplitude, baseline, and edge sharpness remain normal—only cadence and duty cycle deviate, matching frequency definition.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1,
+      "boundary_refinement": {
+        "method": "reference_roughness",
+        "model_interval": [
+          6927,
+          7128
+        ],
+        "numeric_interval": [
+          6922,
+          6938
+        ],
+        "threshold": 2.469966,
+        "spike_count": 2
+      }
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8293
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1145,
+      1439
+    ],
+    [
+      2586,
+      2880
+    ],
+    [
+      4027,
+      4494
+    ],
+    [
+      5465,
+      5871
+    ],
+    [
+      6881,
+      7175
+    ],
+    [
+      7558,
+      7881
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 16,
+    "unique_focus_regions": 8,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 3,
+    "novelty_redirects": 5,
+    "exploration_targets": 5,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.0,
+    "resolved_event_intervals": [
+      [
+        4224,
+        4372
+      ],
+      [
+        5583,
+        5654
+      ],
+      [
+        6895,
+        7160
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/30/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "30__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/30/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.20125,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 1,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            5583,
+            5648
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8293,
+      "length": 5094,
+      "sample_id": "30__slice_0001_3200_8293",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/30/slices/0001_3200_8293/predictions.json",
+      "prediction_count": 3,
+      "reused": false,
+      "detail_coverage": 0.2381232822928936,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 2,
+        "exploration_targets": 2,
+        "resolved_event_intervals": [
+          [
+            1024,
+            1172
+          ],
+          [
+            2384,
+            2454
+          ],
+          [
+            3695,
+            3960
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 4,
+    "voted_prediction_count": 3,
+    "voted_anomaly_points": 62,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 1.9,
+    "covered_points": 8294,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

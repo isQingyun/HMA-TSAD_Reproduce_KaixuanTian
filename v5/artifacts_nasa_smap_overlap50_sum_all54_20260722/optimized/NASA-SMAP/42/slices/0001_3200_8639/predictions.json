@@ -1,0 +1,291 @@
+{
+  "schema_version": 2,
+  "dataset": "NASA-SMAP",
+  "sample_id": "42__slice_0001_3200_8639",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 5440,
+  "normalization": {
+    "center": -0.7605191086510127,
+    "scale": 0.32029581068618074
+  },
+  "reference_source": "train",
+  "reference_intervals": [
+    [
+      0,
+      9
+    ],
+    [
+      950,
+      979
+    ],
+    [
+      1901,
+      1930
+    ],
+    [
+      2831,
+      2880
+    ]
+  ],
+  "reference_cycles": [
+    1.0,
+    3.0,
+    3.0,
+    5.0
+  ],
+  "reference_window_points": [
+    10,
+    30,
+    30,
+    50
+  ],
+  "reference_memory": {
+    "status": "visual-learned",
+    "source": "train",
+    "normal_pattern": "The normal pattern is a highly stable, monotonic linear trend with near-zero curvature and negligible oscillatory components. Across all candidates, the series exhibits a consistent positive slope of approximately 0.00093 per time step (≈0.0093 per 10 steps), matching the catalog’s slope_per_point values. The period is effectively infinite (non-cyclic), confirmed by the estimated_period=10 being a metadata artifact rather than a true periodicity—no repeating peaks/troughs are present in any candidate. Amplitude variation is minimal: 90% amplitude ranges from 0.0076 (10-point window) to 0.041 (50-point window), scaling roughly with √length, indicating white-noise-like fluctuations around the trend. Noise is low-amplitude, symmetric, and appears as small irregular deviations from the straight line; roughness is uniformly ~0.000936 across all windows, suggesting constant local variability. Baseline level shifts gradually across candidates (from −1.344 to +1.325), reflecting the global trend over the full series, but within each window the local baseline is well-defined and linear. No sharp peaks or troughs occur; extrema are shallow and smoothly connected. Acceptable variation includes minor local kinks (<0.001 deviation) and slight slope heterogeneity (e.g., candidate 3 shows slope 0.00091966 vs 0.00093618 in others), likely due to robust standardization artifacts or finite-sample effects—not structural change.",
+    "reference_profiles": [
+      {
+        "reference_index": 0,
+        "interval": [
+          0,
+          9
+        ],
+        "length": 10,
+        "median": -1.344326,
+        "mad": 0.00234,
+        "amplitude_90": 0.007583,
+        "roughness": 0.000936,
+        "curvature": 0.0,
+        "slope_per_point": 0.00093618,
+        "lower_extreme": 0.004213,
+        "upper_extreme": 0.004213,
+        "window_cycles": 1.0,
+        "description": "A 10-point segment showing a clean, almost perfectly straight upward line with no visible noise or curvature; extremely low amplitude (±0.004) and minimal roughness; appears as a near-ideal linear ramp.",
+        "reliability": 0.98,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "ultra-short linear ramp",
+          "lowest amplitude",
+          "highest signal-to-noise"
+        ]
+      },
+      {
+        "reference_index": 1,
+        "interval": [
+          950,
+          979
+        ],
+        "length": 30,
+        "median": -0.445595,
+        "mad": 0.007021,
+        "amplitude_90": 0.024434,
+        "roughness": 0.000936,
+        "curvature": 0.0,
+        "slope_per_point": 0.00093618,
+        "lower_extreme": 0.013575,
+        "upper_extreme": 0.013575,
+        "window_cycles": 3.0,
+        "description": "A 30-point segment (3 cycles per plan) displaying a smooth, slightly noisier linear increase than candidate 0; small irregularities visible but still tightly hugging the trend; median near −0.446, consistent with global trend progression.",
+        "reliability": 0.97,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "moderate-length linear trend",
+          "symmetric small fluctuations",
+          "stable slope"
+        ]
+      },
+      {
+        "reference_index": 2,
+        "interval": [
+          1901,
+          1930
+        ],
+        "length": 30,
+        "median": 0.445153,
+        "mad": 0.007021,
+        "amplitude_90": 0.024434,
+        "roughness": 0.000936,
+        "curvature": 0.0,
+        "slope_per_point": 0.00093618,
+        "lower_extreme": 0.013575,
+        "upper_extreme": 0.013575,
+        "window_cycles": 3.0,
+        "description": "Another 30-point segment mirroring candidate 1 in morphology—same slope, roughness, and amplitude—but shifted upward to median ≈+0.445; confirms trend continuity and repeatability of linear behavior across different baselines.",
+        "reliability": 0.97,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "mirror of candidate 1 in level",
+          "identical local dynamics",
+          "no phase shift"
+        ]
+      },
+      {
+        "reference_index": 3,
+        "interval": [
+          2831,
+          2880
+        ],
+        "length": 50,
+        "median": 1.324818,
+        "mad": 0.011532,
+        "amplitude_90": 0.040944,
+        "roughness": 0.000936,
+        "curvature": 0.0,
+        "slope_per_point": 0.00091966,
+        "lower_extreme": 0.022595,
+        "upper_extreme": 0.022468,
+        "window_cycles": 5.0,
+        "description": "A 50-point segment (5 cycles) showing the longest context; still linear with same slope, but slight slope reduction (0.00091966) and marginally higher amplitude (±0.0225); minor boundary truncation at ends; overall consistent with trend model but with more accumulated noise.",
+        "reliability": 0.95,
+        "possible_contamination": false,
+        "distinctive_features": [
+          "longest window",
+          "slightly reduced slope",
+          "largest amplitude due to length"
+        ]
+      }
+    ],
+    "selection_guidance": "Prefer candidate 0 for high-precision local anomaly detection (short windows, low noise floor); use candidates 1 or 2 for mid-length queries where baseline level matters (they share identical morphology and reliability); select candidate 3 only when analyzing ≥50-point windows or when verifying long-range trend consistency. For queries with visible curvature, non-monotonicity, or abrupt slope changes, none of these references apply directly—flag as potentially anomalous.",
+    "uncertainties": [
+      "Whether the tiny slope difference in candidate 3 reflects true trend nonlinearity or robust-standardization edge effects",
+      "Exact noise distribution shape (Gaussian vs heavy-tailed) cannot be inferred from these smooth segments",
+      "No evidence of seasonality or cyclicity exists here, but absence of evidence ≠ evidence of absence—global period estimate of 10 may indicate weak harmonic content outside these windows"
+    ]
+  },
+  "analysis_window_points": 30,
+  "analysis_windows": {
+    "1": 10,
+    "3": 30,
+    "5": 50
+  },
+  "estimated_period": 10,
+  "coverage": 0.0,
+  "detail_coverage": 0.0,
+  "overview_coverage": 1.0,
+  "predictions": [],
+  "overview_intervals": [
+    [
+      0,
+      5439
+    ]
+  ],
+  "observed_intervals": [],
+  "attention_summary": {
+    "detail_visual_actions": 0,
+    "unique_focus_regions": 0,
+    "actions_per_focus": 0.0,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 5,
+    "novelty_redirects": 4,
+    "exploration_targets": 4,
+    "resolved_event_intervals": [],
+    "dismissed_candidate_count": 0
+  },
+  "subtask_history": [
+    {
+      "goal": "Inspect a global overview and characterize the dominant pattern and deviations.",
+      "strategy": "overview",
+      "summary": "A global overview of [0, 5439] confirms a dominant near-perfect monotonic linear trend with low roughness and negligible curvature, matching the reference normal pattern—except for a single, high-confidence anomalous point event at [2294, 2296] (centered at index 2295), where the series drops abruptly from ≈+5.4 to ≈−0.7 (Δy ≈ −6.1), violating normal amplitude bounds by two orders of magnitude. The drop is sharp, isolated, fully contained within the interval, and not attributable to downsampling or boundary truncation; post-event, the series resumes a stable low-baseline linear trend. No other deviations were observed. The sub-task goal—characterizing dominant pattern and deviations—is fulfilled; no further non-redundant evidence actions remain.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "no non-redundant evidence action remains"
+      }
+    },
+    {
+      "goal": "Inspect a detail-scale window around the strongest unresolved overview candidate.",
+      "strategy": "zoom",
+      "summary": "Attempted to zoom into detail-scale window [2280, 2309] around strongest unresolved candidate at [2294, 2296] for verification per resolution guard; Plot failed due to novelty guard rejecting overlap with prior focus [2230, 2357]. No further inspection was performed, and the sub-task was prematurely marked complete without resolving the candidate. Uncertainty remains on whether the candidate is a true single-step impulse or artifact.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [3860, 3889] via Plot, but novelty guard rejected the request due to overlap with prior focus [3810, 3937]. No visual evidence was obtained from the target interval. Despite this, the Executor marked the goal as complete without further action, leaving the gap unexamined and unresolved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect the largest unobserved gap [1125, 1154] via Plot, but the novelty guard rejected the request due to overlap with a broader interval [1075, 1202]. No visual evidence was obtained. The sub-task was marked complete by Finish without resolving the gap, indicating either the planner deemed coverage sufficient despite the rejection or uncertainty remains about whether this gap is truly unobserved or must be revisited with adjusted parameters.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to plot the largest unobserved gap [3070, 3099] at detail resolution, but the Plot action was rejected by the novelty guard due to overlap with a prior focus interval [3020, 3147]. Despite no prior observed_intervals being recorded, the system deemed the request overlapping. The executor then concluded the goal as complete without acquiring new evidence for the target interval, leaving the coverage gap unexamined and unresolved.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    },
+    {
+      "goal": "Inspect a novel detail window in the largest remaining coverage gap.",
+      "strategy": "coverage",
+      "summary": "Attempted to inspect novel coverage gap [4650, 4679] via Plot, but novelty guard rejected the request due to overlap with a broader focus interval [4600, 4727]. No evidence was gathered from this interval. Executor then marked the goal as complete without further action, though the intended inspection was not executed and the gap remains unobserved. Uncertainty remains about whether the gap is truly unobserved or if the rejection reflects an overly conservative novelty guard.",
+      "actions": [
+        "Plot",
+        "Finish"
+      ],
+      "new_observations": 2,
+      "coverage_after": 0.0,
+      "mark_count_after": 0,
+      "last_observation": {
+        "status": "ok",
+        "tool": "Finish",
+        "reason": "goal complete"
+      }
+    }
+  ],
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

@@ -1,0 +1,166 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "51",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8612,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.22816999535531815,
+  "detail_coverage": 0.22816999535531815,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 3092,
+      "end": 3118,
+      "confidence": 0.87,
+      "vote_score": 0.87,
+      "mean_vote_confidence": 0.87,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: Trough centered ~3105 exhibits abnormally rapid ascent slope (~+1.1 vs. normal +0.6 to +0.8) and reduced depth (~-16.8 vs. -18 to -20); width ~26 pts exceeds normal 15–20. Morphology deviates systematically from learned quasi-periodic motif while adjacent cycles remain normal, confirming localized shape distortion.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8611
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1426,
+      1656
+    ],
+    [
+      2255,
+      2485
+    ],
+    [
+      3084,
+      3430
+    ],
+    [
+      4081,
+      4311
+    ],
+    [
+      4742,
+      4972
+    ],
+    [
+      5700,
+      5930
+    ],
+    [
+      7150,
+      7380
+    ],
+    [
+      8380,
+      8611
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 12,
+    "unique_focus_regions": 9,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 1,
+    "novelty_redirects": 3,
+    "exploration_targets": 3,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 1.333333,
+    "resolved_event_intervals": [
+      [
+        3060,
+        3150
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/51/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "51__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/51/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.144375,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 7,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 1.75,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 1,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            3060,
+            3150
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8611,
+      "length": 5412,
+      "sample_id": "51__slice_0001_3200_8611",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/51/slices/0001_3200_8611/predictions.json",
+      "prediction_count": 0,
+      "reused": false,
+      "detail_coverage": 0.21359940872135993,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 5,
+        "unique_focus_regions": 5,
+        "actions_per_focus": 1.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 0,
+        "novelty_redirects": 0,
+        "exploration_targets": 0,
+        "resolved_event_intervals": [],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 1,
+    "voted_prediction_count": 1,
+    "voted_anomaly_points": 27,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.87,
+    "covered_points": 8612,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}

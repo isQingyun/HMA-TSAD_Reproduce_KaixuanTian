@@ -1,0 +1,203 @@
+{
+  "schema_version": 3,
+  "dataset": "NASA-SMAP",
+  "sample_id": "22",
+  "mode": "optimized",
+  "model": "qwen3-vl-plus",
+  "series_length": 8516,
+  "normalization": "median/MAD robust standardization per slice",
+  "reference_source": "recorded separately for each slice",
+  "coverage": 0.11930483795209018,
+  "detail_coverage": 0.11930483795209018,
+  "overview_coverage": 1.0,
+  "predictions": [
+    {
+      "start": 5649,
+      "end": 5827,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.46,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [0]; representative local evidence: A sustained flat segment at robust z ≈ 1.65 (not baseline 0.0) spans ~179 points between two normal pulses; violates learned normal pattern which requires sharp downward transition to exact baseline (0.0) and flat zero baseline between pulses. No reference profile contains a non-zero inter-pulse level; this morphology differs fundamentally from the rectangular pulse + zero-baseline motif.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        0
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 7144,
+      "end": 7158,
+      "confidence": 0.92,
+      "vote_score": 0.92,
+      "mean_vote_confidence": 0.92,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Rise over 5 points (3944–3948) and fall over 5 points (3958–3962) instead of near-vertical 1–2 point transitions; plateau only ~10 points (3949–3958) vs. expected 20–22. Amplitude unchanged (~2.47), but morphology violates learned piecewise-constant, zero-roughness normal pattern (ref 0). Verified on detail plot: curve leaves baseline at 3944, reaches plateau by 3949, stays flat until 3958, drops at 3959.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    },
+    {
+      "start": 7788,
+      "end": 7808,
+      "confidence": 0.93,
+      "vote_score": 0.93,
+      "mean_vote_confidence": 0.93,
+      "anomaly_type": "shapelet",
+      "evidence": "Global window vote from slices [1]; representative local evidence: Rise from 0.0 to ~2.47 over 5 points (4588–4593) and fall over 5 points (4603–4608), violating the invariant sharp vertical transitions (roughness=0 in references). Plateau ~17 points (4594–4602) vs. normal 20–22. Full distorted pulse spans exactly [4588,4608], confirmed on zoomed plot; next pulse begins at ~4650, so 4746 is spurious.",
+      "source": "window-confidence-vote",
+      "supporting_windows": [
+        1
+      ],
+      "supporting_prediction_count": 1
+    }
+  ],
+  "overview_intervals": [
+    [
+      0,
+      8515
+    ]
+  ],
+  "observed_intervals": [
+    [
+      1274,
+      1423
+    ],
+    [
+      2698,
+      2947
+    ],
+    [
+      4223,
+      4372
+    ],
+    [
+      5643,
+      5799
+    ],
+    [
+      7079,
+      7228
+    ],
+    [
+      7788,
+      7946
+    ]
+  ],
+  "attention_summary": {
+    "detail_visual_actions": 14,
+    "unique_focus_regions": 7,
+    "exact_repeat_actions": 0,
+    "same_tool_near_repeat_actions": 0,
+    "blocked_repeated_visual_actions": 4,
+    "novelty_redirects": 5,
+    "exploration_targets": 5,
+    "dismissed_candidate_count": 0,
+    "actions_per_focus": 2.0,
+    "resolved_event_intervals": [
+      [
+        5617,
+        5859
+      ],
+      [
+        7112,
+        7190
+      ],
+      [
+        7756,
+        7840
+      ]
+    ],
+    "scope": "sum of independently processed slices"
+  },
+  "windowing": {
+    "enabled": true,
+    "window_size_source": "agent.plot_max_points",
+    "window_size": 6400,
+    "overlap_ratio": 0.5,
+    "stride": 3200,
+    "window_count": 2,
+    "full_series_coverage": 1.0,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "aggregation": "point-wise sum confidence over all covering slices",
+    "manifest_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/22/slice_manifest.json"
+  },
+  "slice_results": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 6399,
+      "length": 6400,
+      "sample_id": "22__slice_0000_0_6399",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/22/slices/0000_0_6399/predictions.json",
+      "prediction_count": 1,
+      "reused": false,
+      "detail_coverage": 0.10953125,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 8,
+        "unique_focus_regions": 4,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 3,
+        "exploration_targets": 3,
+        "resolved_event_intervals": [
+          [
+            5617,
+            5859
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    },
+    {
+      "index": 1,
+      "start": 3200,
+      "end": 8515,
+      "length": 5316,
+      "sample_id": "22__slice_0001_3200_8515",
+      "prediction_path": "/home/data/tkx/HMA-TSAD_v5/artifacts_nasa_smap_overlap50_sum_all54_20260722/optimized/NASA-SMAP/22/slices/0001_3200_8515/predictions.json",
+      "prediction_count": 2,
+      "reused": false,
+      "detail_coverage": 0.0863431151241535,
+      "overview_coverage": 1.0,
+      "attention_summary": {
+        "detail_visual_actions": 6,
+        "unique_focus_regions": 3,
+        "actions_per_focus": 2.0,
+        "exact_repeat_actions": 0,
+        "same_tool_near_repeat_actions": 0,
+        "blocked_repeated_visual_actions": 2,
+        "novelty_redirects": 2,
+        "exploration_targets": 2,
+        "resolved_event_intervals": [
+          [
+            3912,
+            3990
+          ],
+          [
+            4556,
+            4640
+          ]
+        ],
+        "dismissed_candidate_count": 0
+      }
+    }
+  ],
+  "aggregation_diagnostics": {
+    "mapped_prediction_count": 3,
+    "voted_prediction_count": 3,
+    "voted_anomaly_points": 215,
+    "vote_threshold": 0.5,
+    "vote_aggregation": "sum",
+    "maximum_vote_score": 0.93,
+    "covered_points": 8516,
+    "maximum_window_votes_per_point": 2
+  },
+  "label_policy": "ground-truth labels were not loaded during inference"
+}
